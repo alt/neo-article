@@ -14,35 +14,35 @@ xspace
 
 \begin{filecontents}{\jobname.bib}
 @Misc{patente,
-  author	= {US-Patente},
-  note= {79265 und 79868}
+  author = {US-Patente},
+  note = {79265 und 79868}
 }
 @Misc{patentdvorak,
-  author	= {US-Patent},
-  note= {2040248}
+  author = {US-Patent},
+  note = {2040248}
 }
 @Misc{neo2,
-  author	= {Neo Projektseite},
-  note= {\url{http://www.neo-layout.org}}
+  author = {Neo Projektseite},
+  note = {\url{http://www.neo-layout.org}}
 }
 @Misc{deergo,
-  author	= {de-ergo Layout},
-  note= {\url{http://forschung.goebel-consult.de/de-ergo}}
+  author = {de-ergo Layout},
+  note = {\url{http://forschung.goebel-consult.de/de-ergo}}
 }
 @Misc{ristome,
-  author	= {ristome Layout},
-  note= {\url{http://ristome.de}}
+  author = {ristome Layout},
+  note = {\url{http://ristome.de}}
 }
 @Misc{datahand,
-  author	= {DataHand},
-  note= {\url{http://www.datahand.com}}
+  author = {DataHand},
+  note = {\url{http://www.datahand.com}}
 }
 \end{filecontents}
 
 \newcommand{\taste}[1]{\makebox{\textsf{#1}}}
-\newcommand\neoii{Neo\,2\xspace}
 \newcommand\neoio{Neo\,1.0\xspace}
 \newcommand\neoioi{Neo\,1.1\xspace}
+\newcommand\neoii{Neo\,2\xspace}
 \newcommand\LuaTeX{Lua\TeX}
 \newcommand\LuaLaTeX{Lua\LaTeX}
 \newcommand{\fixme}[1]{\marginpar{\vspace*{-.5\baselineskip}\footnotesize\color{red}#1}}
@@ -54,7 +54,7 @@ xspace
 \address{Arno}{Trautmann}{Boxbergring 10\\ 69126 HD-Boxberg\\ \Email{arno.trautmann@gmx.de}}
 \address{Dennis}{Heidsiek}{Brucknerstraße 10\\ 27474 Cuxhaven\\ \Email{dennis.heidsiek@googlemail.com}}
 \address{Christian}{Kluge}{Dorfstraße 1\\ 12345 Kleinkötersdorf \Email{ckfrakturfreak@web.de}}
-\keywords{Ergonomie, xelatex, Neo} % noch welche rein?
+\keywords{Ergonomie, xetex, xelatex, Neo} % noch welche rein?
 
 \begin{document}
 \setmonofont[Scale=0.8]{DejaVu Sans Mono}
@@ -72,18 +72,18 @@ Schon im Jahre 1932 hat August Dvorak die ungeschickte Belegung als solche erkan
 \subsection{\neoio und 1.1}
 Im Jahre 2004 hat Hanno Behrens eine weitere ergonomische Tastatur entwickelt, die er Neo nannte. Etwa ein Jahr später kam mit \neoioi eine Verbesserung und teilweise Erweiterung des Layouts auf, z.\,B. wurde eine zweite \taste{Alt Gr}-Taste auf der linken Hand eingeführt, um den Zugriff auf Sonderzeichen zu vereinfachen – ein großer Schritt in Richtung Ergonomie beim Programmieren, man denke etwa an die schwere Erreichbarkeit des |\|.
 \section{Gegenwart}
-Seit dieser Zeit wird \neoii entwickelt, dessen Referenz Ende März eingefroren wurde und das somit stabil ist. \cite{neo2} Gegenüber der ersten Verision wurden viele grundlegende Änderungen vorgenommen, wobei die Belegung der Buchstaben zu großen Teilen gleich blieb. Die Abbildung zeigt die aktuelle Belegung.\fixme{oder auch noch nicht \dots{}} Diese weist nach langen Tests im alltäglichen Umgang vieler Entwickler sowie durch umfangreiche Diskussionen eine optimierte Verteilung der Buchstaben auf.
+Seit dieser Zeit wird \neoii entwickelt, dessen Referenz Ende März eingefroren wurde und das somit stabil ist. \cite{neo2} Gegenüber der ersten Version wurden viele grundlegende Änderungen vorgenommen, wobei die Belegung der Buchstaben zu großen Teilen gleich blieb. Die Abbildung zeigt die aktuelle Belegung.\fixme{oder auch noch nicht \dots{}} Diese weist nach langen Tests im alltäglichen Umgang vieler Entwickler sowie durch umfangreiche Diskussionen eine optimierte Verteilung der Buchstaben auf.
 \begin{center}
 \includegraphics[width=.8\textwidth]{ebene2}
 \captionof{figure}{\neoii – zweite Ebene mit Großbuchstaben}
 \end{center}
 Hauptänderung in Version 2.0 war jedoch die Einführung von „höheren Ebenen“ der Tastatur,\footnote{Nur in der Software! Neo ist für deutsche Standardtastaturen entwickelt, s.\,u.} insgesamt ist jede Taste sechsfach belegt: Auf Ebene~1 Kleinbuchstaben und Satzzeichen. (\taste{abc.,}) Diese werden durch einfachen Druck auf die Taste erzeugt. Auf der Ebene~2 sind alle Zeichen, die durch Drücken von Shift (oder „Umschalt“) erzeugt werden: Großbuchstaben \taste{A}, wenige Sonderzeichen \taste{§} und Zeichen wie \taste{»« „“}, die für typographisch korrektes Schreiben (statt \taste{"}) verwendet werden. Ebene~3 wird durch \taste{Alt Gr} verwendet, in dieser Ebene sind Sonderzeichen, die zum Programmieren verwendet werden wie |()\/{}_[ ]^!<>|. Um klare Bezeichnungen zu erreichen, wurde \taste{Alt Gr} bei \neoii in \taste{Mod 3} umbenannt.
 
-Diese Funktionalität bieten fast alle Tastaturlayouts in ähnlicher Form. Neo bietet neben dem Modifikator für Ebene~3 noch einen für eine weitere Ebene, konsequent benannt Mod~4. Diese beitet wenige weitere Zeichen in gewohnter Form, vor allem aber als völlig neues Konzept Steuerzeichen, die normalerweise weit außerhalb des Tastenfeldes liegen, wie die Pfeiltasten für Navigation im Text, Enter, Löschen, Tabulator, Entfernen, Pos1, Ende, Einfügen, Bild hoch und Bild runter. Diese sind alle auf der linken Hälfte der Tastatur, sodass mit der rechten Hand \taste{Mod 4} gedrückt und dann bequem am Text gearbeitet werden kann.
+Diese Funktionalität bieten fast alle Tastaturlayouts in ähnlicher Form. Neo bietet neben dem Modifikator für Ebene~3 noch einen für eine weitere Ebene, konsequent benannt Mod~4. Diese bietet wenige weitere Zeichen in gewohnter Form, vor allem aber als völlig neues Konzept Steuerzeichen, die normalerweise weit außerhalb des Tastenfeldes liegen, wie die Pfeiltasten für Navigation im Text, Enter, Löschen, Tabulator, Entfernen, Pos1, Ende, Einfügen, Bild hoch und Bild runter. Diese sind alle auf der linken Hälfte der Tastatur, so dass mit der rechten Hand \taste{Mod 4} gedrückt und dann bequem am Text gearbeitet werden kann.
 
 Bei einer normalen Tastatur muss die rechte Hand einen Weg von bis zu 5cm zurücklegen, bis die Pfeiltasten erreicht sind; der Weg zu Bild hoch ist meist noch länger und oft muss man auf die Tastatur sehen, um die Taste schnell zu finden. Das alles stört aber den Schreibfluss\footnote{Natürlich sollte man selten Entfernen/Löschen drücken – aber jeder macht Fehler!} und belastet die Arme durch die ständige weite Bewegung.
 
-Auf der rechten Tastaturhälfte findet sich auf der vierten Ebene eine Wiederholung des Ziffernblockes – alle Zahlen und Rechenzeichen sind somit in der Grundhaltung der Hand verfügbar und man muss weder die obere Zahlenreihe noch den „weit entfernten“ Zahlenblock verwenden. Zum Markieren kann wie gewohnt zusätzlich Shift gedrückt werden. Falls man viele Zahlen hintereinander eingeben muss oder sehr viel im Text (oder einem pdf z.\,B.) navigieren muss, ohne zu schreiben, ist die Lock-Funktion nützlich, die analog zu Caps Lock funktioniert: Drücken beider \taste{Mod 4}-Tasten gleichzeitig lässt die Funktion einrasten und man muss nicht ständig den Finger auf der Taste lassen.
+Auf der rechten Tastaturhälfte findet sich auf der vierten Ebene eine Wiederholung des Ziffernblockes – alle Zahlen und Rechenzeichen sind somit in der Grundhaltung der Hand verfügbar und man muss weder die obere Zahlenreihe noch den „weit entfernten“ Zahlenblock verwenden. Zum Markieren kann wie gewohnt zusätzlich Shift gedrückt werden. Falls man viele Zahlen hintereinander eingeben muss oder sehr viel im Text (z.\,B. in einer pdf-Datei) navigieren muss, ohne zu schreiben, ist die Lock-Funktion nützlich, die analog zu Caps Lock funktioniert: Drücken beider \taste{Mod 4}-Tasten gleichzeitig lässt die Funktion einrasten und man muss nicht ständig den Finger auf der Taste lassen.
 
 \begin{center}
 \includegraphics[width=.501\textwidth]{ebene4}%
@@ -95,7 +95,8 @@ Damit ist die Vielfalt von Neo noch nicht erschöpft: Für kurze griechische Wö
 
 Schließlich bietet die Ebene~6, zu erreichen über gleichzeitiges Drücken von \taste{Mod 3} und \taste{Mod 4}, noch eine weitere Vielfalt an Sonderzeichen, vor allem mathematischen Symbolen und einigen griechischen Großbuchstaben.
 
-Nach dem gleichen Ebenensystem ist der Nummernblock belegt, der außer den Zahlen (erste Ebene) und den Steuerzeichen (vierte Ebene, redundant zu denen auf der vierten Ebene linke Hand) mathematische Relationen und Symbole enthält.
+\fixme{\includegraphics[width=.501\textwidth]{nummernblock}?}
+Nach dem gleichen Ebenensystem ist der Nummernblock belegt, der außer den Zahlen (erste Ebene) und den Steuerzeichen (vierte Ebene, redundant zu denen auf der vierten Ebene linke Hand) seltenere mathematische Relationen und Symbole enthält.
 
 \subsection{Anordnung der Tasten}
 Wie kann man sich denn nun all diese Tasten merken? Oft fällt es schon schwer, sich alle normalen Tasten zu merken, aber dann gleich 6 Zeichen pro Taste?
