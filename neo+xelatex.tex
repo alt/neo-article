@@ -53,7 +53,7 @@ xspace
 
 \address{Arno}{Trautmann}{Boxbergring 10\\ 69126 HD-Boxberg\\ \Email{arno.trautmann@gmx.de}}
 \address{Dennis}{Heidsiek}{Brucknerstraße 10\\ 27474 Cuxhaven\\ \Email{dennis.heidsiek@googlemail.com}}
-\address{Christian}{Kluge}{Dorfstraße 1\\ 12345 Kleinkötersdorf}
+\address{Christian}{Kluge}{Dorfstraße 1\\ 12345 Kleinkötersdorf \Email{ckfrakturfreak@web.de}}
 \keywords{Ergonomie, xelatex, Neo} % noch welche rein?
 
 \begin{document}
@@ -70,7 +70,7 @@ Die Antwort darauf liegt weit zurück: Im Jahren 1868 hat Christopher Latham Sho
 Schon im Jahre 1932 hat August Dvorak die ungeschickte Belegung als solche erkannt und nach längeren Studien eine neue Tastaturbelegung erstellt, 1936 wurde das Patent \cite{patentdvorak} angenommen. Es folgten einige Jahre später weitere moderne Entwicklungen wie de-ergo und RISTOME, die aber bis heute keine große Nutzerbasis haben. \cite{deergo,ristome} Das liegt einerseits am niedrigen Bekanntheitsgrad alternativer Layouts, andererseits am Problem des Umlernens: Selbst wenn man sich vorgenommen hat, eine neue Belegung zu erlernen (erfahrungsgemäß benötigt man ca. 2 Wochen, um wieder einigermaßen flüssig schreiben zu können), ist es immer ein Problem, an anderen Computern zu arbeiten – der Leser kennt dieses Problem vielleicht vom Umstieg von Word auf \LaTeX\ – eine Investition, die sich aber meist doch sehr gelohnt hat.
 
 \subsection{\neoio und 1.1}
-Im Jahre 2004 hat Hanno Behrens eine weitere ergonomische Tastatur entwickelt, die er Neo nannte. Etwa ein Jahr später kam mit \neoioi eine Verbesserung und teilweise Erweiterung des Layouts auf, z.\,B. wurde eine zweite \taste{Alt Gr}-Taste auf der linken Hand eingeführt, um den Zugriff auf Sonderzeichen zu vereinfachen – ein großer Schritt in Richtung Ergonomie beim Programmieren, man denke etwa an die schwere Erreichbarkeit des |{|.
+Im Jahre 2004 hat Hanno Behrens eine weitere ergonomische Tastatur entwickelt, die er Neo nannte. Etwa ein Jahr später kam mit \neoioi eine Verbesserung und teilweise Erweiterung des Layouts auf, z.\,B. wurde eine zweite \taste{Alt Gr}-Taste auf der linken Hand eingeführt, um den Zugriff auf Sonderzeichen zu vereinfachen – ein großer Schritt in Richtung Ergonomie beim Programmieren, man denke etwa an die schwere Erreichbarkeit des |\|.
 \section{Gegenwart}
 Seit dieser Zeit wird \neoii entwickelt, dessen Referenz Ende März eingefroren wurde und das somit stabil ist. \cite{neo2} Gegenüber der ersten Verision wurden viele grundlegende Änderungen vorgenommen, wobei die Belegung der Buchstaben zu großen Teilen gleich blieb. Die Abbildung zeigt die aktuelle Belegung.\fixme{oder auch noch nicht \dots{}} Diese weist nach langen Tests im alltäglichen Umgang vieler Entwickler sowie durch umfangreiche Diskussionen eine optimierte Verteilung der Buchstaben auf.
 \begin{center}
@@ -104,7 +104,7 @@ Hier hilft die sinngemäße Anordnung: Die Taste |a| hat die Zeichen |a A { α �
 
 Es wird versucht, das Layout so zu gestalten, dass es sehr intuitiv verwendet werden kann und man kein „Raketentechniker“ sein muss, um es zu verstehen.\footnote{Das Keyboarddesign „Space Cadett“ hatte dieses Problem, aber auf Hardwareseite.}
 
-Dank der großen Zeichenvielfalt im Unicode reichen aber die sechs Tastaturebenen nicht aus, um alle mehr oder weniger häufig gebrauchten Zeichen abzudecken. Daher gibt es weiterhin die unter Linux und Sun OS bereits übliche Compose-Taste: Drückt man \taste{Mod 3} und \taste{Tab}, danach (zwei oder drei) weitere Tasten, so werden diese sinngemäß „kombiniert“ und ergeben ein neues Zeichen. Die Eingabefolge \taste{Compose a e} ergibt das Zeichen \taste{æ}, die Folge \taste{Compose :)} ergibt das Unicode-Zeichen für ein Smiley. Das klingt wiederum sehr kompliziert und unergonomisch, doch wenn man das Zeichen oft benötigt, lohnt es sich, einmal in der Liste nachzusehen, wie es erzeugt wird und es dann stets direkt eingeben zu können, statt in einem Formeleditor o.\,ä. nachzuschlagen.
+Dank der großen Zeichenvielfalt im Unicode reichen aber die sechs Tastaturebenen nicht aus, um alle mehr oder weniger häufig gebrauchten Zeichen abzudecken. Daher gibt es weiterhin die unter Linux und Solaris bereits übliche Compose-Taste: Drückt man \taste{Mod 3} und \taste{Tab}, danach (zwei oder drei) weitere Tasten, so werden diese sinngemäß „kombiniert“ und ergeben ein neues Zeichen. Die Eingabefolge \taste{Compose a e} ergibt das Zeichen \taste{æ}, die Folge \taste{Compose :)} ergibt das Unicode-Zeichen für ein Smiley. Das klingt wiederum sehr kompliziert und unergonomisch, doch wenn man das Zeichen oft benötigt, lohnt es sich, einmal in der Liste nachzusehen, wie es erzeugt wird und es dann stets direkt eingeben zu können, statt in einem Formeleditor o.\,ä. nachzuschlagen.
 
 \subsection{Neo ist keine Tastatur \dots{}}
 \dots{}\,sondern eine Tastaturbelegung. Neo orientiert sich an den Tasten einer handelsüblichen deutschen Tastatur, wie in den Abbildungen angedeutet. Man muss lediglich einen Treiber installieren, der auf der Homepage verfügbar ist und was meist nur ein oder zwei Klicks erfordert. Zur Zeit gibt es Treiber für Windows, Linux und Mac OS X.\footnote{Wegen Softwareproblemen sind in Mac OS X momentan die 5. und 6. Ebene über andere Tastenkombinationen und die 4. gar nicht verfügbar.}
