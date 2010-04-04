@@ -10,5 +10,10 @@
 *.out
 *.toc
 
+# Ignore auto save files and auto/ directory from Emacs
+*~
+\#*
+auto/
+
 # Ignore all final documents (but grasp PDF images):
 neo+xelatex.pdf
