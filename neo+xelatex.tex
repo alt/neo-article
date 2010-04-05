@@ -5,7 +5,7 @@ babel,
 caption,
 listings,
 lmodern,
-hyperref,
+%hyperref,
 shortvrb,
 todonotes,
 xltxtra,
@@ -22,8 +22,8 @@ xspace
   note = {\url{http://forschung.goebel-consult.de/de-ergo}}
 }
 @Misc{neo2,
-  author = {Neo Projektseite},
-  note = {\url{http://www.neo-layout.org}}
+  author	= {Neo Projektseite mit Wiki},
+  note= {\url{http://www.neo-layout.org}}
 }
 @Misc{patentdvorak,
   author = {US-Patent},
@@ -53,7 +53,7 @@ xspace
 \newcommand{\fixme}[1]{\marginpar{\vspace*{-.5\baselineskip}\footnotesize\color{red}#1}}
 \MakeShortVerb\|
 
-\title{Neo \&\ \XeLaTeX\\Ergonomie und Zeichenvielfalt}
+\title{Neo \&\ \XeLaTeX\ –\\ Ergonomie und Zeichenvielfalt}
 \author{Arno Trautmann\and Dennis Heidsiek\and Christian Kluge}
 
 \address{Arno}{Trautmann}{Boxbergring 10\\ 69126 HD-Boxberg\\ \Email{arno.trautmann@gmx.de}}
@@ -77,7 +77,8 @@ Schon im Jahre 1932 hat August Dvorak die ungeschickte Belegung als solche erkan
 \subsection{\neoio und 1.1}
 Im Jahre 2004 hat Hanno Behrens eine weitere ergonomische Tastatur entwickelt, die er Neo nannte. Etwa ein Jahr später kam mit \neoioi eine Verbesserung und teilweise Erweiterung des Layouts auf, z.\,B. wurde eine zweite \taste{Alt Gr}-Taste auf der linken Hand eingeführt, um den Zugriff auf Sonderzeichen zu vereinfachen – ein großer Schritt in Richtung Ergonomie beim Programmieren, man denke etwa an die schwere Erreichbarkeit des |{|.
 \section{Gegenwart}
-Seit dieser Zeit wird \neoii entwickelt, dessen Referenz Ende März eingefroren wurde und das somit stabil ist. \cite{neo2} Gegenüber der ersten Version wurden viele grundlegende Änderungen vorgenommen, wobei die Belegung der Buchstaben zu großen Teilen gleich blieb. Die Abbildung zeigt die aktuelle Belegung.\fixme{oder auch noch nicht \dots{}} Diese weist nach langen Tests im alltäglichen Umgang vieler Entwickler sowie durch umfangreiche Diskussionen eine optimierte Verteilung der Buchstaben auf.
+Seit dieser Zeit wird \neoii entwickelt, dessen Referenz Ende März eingefroren wurde und das somit stabil ist. \cite{neo2} Gegenüber der ersten Version wurden viele grundlegende Änderungen vorgenommen, wobei die Belegung der Buchstaben zu großen Teilen gleich blieb. Die Abbildung zeigt die aktuelle Belegung. Diese weist nach langen Tests im alltäglichen Umgang vieler Entwickler sowie durch umfangreiche Diskussionen eine optimierte Verteilung der Buchstaben auf.
+
 \begin{center}
 \includegraphics[width=.8\textwidth]{ebene2}
 \captionof{figure}{\neoii – zweite Ebene mit Großbuchstaben}
@@ -86,7 +87,7 @@ Hauptänderung in Version 2.0 war jedoch die Einführung von „höheren Ebenen�
 
 Diese Funktionalität bieten fast alle Tastaturlayouts in ähnlicher Form. Neo bietet neben dem Modifikator für Ebene~3 noch einen für eine weitere Ebene, konsequent benannt Mod~4. Diese bietet wenige weitere Zeichen in gewohnter Form, vor allem aber als völlig neues Konzept Steuerzeichen, die normalerweise weit außerhalb des Tastenfeldes liegen, wie die Pfeiltasten für Navigation im Text, Enter, Löschen, Tabulator, Entfernen, Pos1, Ende, Einfügen, Bild hoch und Bild runter. Diese sind alle auf der linken Hälfte der Tastatur, so dass mit der rechten Hand \taste{Mod 4} gedrückt und dann bequem am Text gearbeitet werden kann.
 
-Bei einer normalen Tastatur muss die rechte Hand einen Weg von bis zu 5cm zurücklegen, bis die Pfeiltasten erreicht sind; der Weg zu Bild hoch ist meist noch länger und oft muss man auf die Tastatur sehen, um die Taste schnell zu finden. Das alles stört aber den Schreibfluss\footnote{Natürlich sollte man selten Entfernen/Löschen drücken – aber jeder macht Fehler!} und belastet die Arme durch die ständige weite Bewegung.
+Bei einer normalen Tastatur muss die rechte Hand einen Weg von bis zu 5cm zurücklegen, bis die Pfeiltasten erreicht sind; der Weg zu Bild hoch ist meist noch länger und oft muss man auf die Tastatur sehen, um die Taste schnell zu finden. Das alles stört aber den Schreibfluss\footnote{Natürlich sollte man selten Entfernen/Löschen drücken – aber jeder macht Fehler, und die Navigation ist immer nötig.} und belastet die Arme durch die ständige weite Bewegung.
 
 Auf der rechten Tastaturhälfte findet sich auf der vierten Ebene eine Wiederholung des Ziffernblockes – alle Zahlen und Rechenzeichen sind somit in der Grundhaltung der Hand verfügbar und man muss weder die obere Zahlenreihe noch den „weit entfernten“ Zahlenblock verwenden. Zum Markieren kann wie gewohnt zusätzlich Shift gedrückt werden. Falls man viele Zahlen hintereinander eingeben muss oder sehr viel im Text (z.\,B. in einer pdf-Datei) navigieren muss, ohne zu schreiben, ist die Lock-Funktion nützlich, die analog zu Caps Lock funktioniert: Drücken beider \taste{Mod 4}-Tasten gleichzeitig lässt die Funktion einrasten und man muss nicht ständig den Finger auf der Taste lassen.
 
@@ -182,7 +183,7 @@ In der DTK 3/2008 hat Markus Kohm berichtet, dass das große scharfe S normiert 
 Liebhaber der gebrochenen Schriften kommen auch auf ihre Kosten, da das lange s (|ſ)| ebenfalls in Neo vorhanden ist; mit einer richtig kodierten gebrochenen Schrift kann man also einfach „deutſch“ schreiben – natürlich auch in Antiqua.
 
 Dank der vielen „toten Tasten“, also diakritischen Zeichen, sind alle Buchstaben aller europäischen, lateinisch basierten Alphabete sowie Griechisch schreibbar – optimal für vielsprachigen Satz.
-\fixme{Noch weiter spezielle Anmerkungen?}
+\fixme{Weitere Anmerkungen?}
 
 \section{Ausblick}
 Nicht nur durch die Ergonomie, die jedes Schreiben am Rechner angenehmer macht, sondern auch durch die große Anzahl an leicht erreichbaren Sonderzeichen kann \neoii die Arbeit mit modernen \TeX-Varianten also sehr viel einfacher machen und erleichtert die Lesbarkeit fremden Codes. Damit ist endlich die Zeit von active characters für Standardeingaben vorbei, und die \TeX-Welt ist in der Zeit moderner Kodierungen angekommen.
