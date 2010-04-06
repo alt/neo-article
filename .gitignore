@@ -3,6 +3,7 @@
 # Ignore temp files created by LaTeX:
 *.aux
 *.bbl
+*.bib
 *.blg
 *.glo
 *.idx
