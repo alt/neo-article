@@ -22,12 +22,14 @@
 \RequirePackage{pgfkeys}
 
 \ProvidesPackage{keyboard}
-  [2010/04/05 v0.1b provides keyboards, initial experimental version.]
+  [2010/04/05 v0.1c provides keyboards, initial experimental version.]
 
 
 \pgfkeys{
   /keyboard/.cd,
+  thickness/.store in = \keyboard@thickness,
   basesize/.store in = \keyboard@bs,
+  textscale/.store in = \keyboard@textscale,
   color/.store in = \keyboard@color,
   colour/.style = {color=#1},
   fillcolor/.store in = \keyboard@fillcolor,
@@ -100,7 +102,9 @@
 
 \pgfkeys{
   /keyboard/.cd,
+  thickness=0.8pt, % the TikZ manual’s definition of thick
   basesize = 0.175cm, % the size of a single quadratic key
+  textscale = 1.0, % same size as surrounding text
   color = black,
   fillcolor = black!10,
   drawcolor = black,
@@ -169,24 +173,28 @@
 }
 
 
+\tikzstyle{keyboardkey}=[line width=\keyboard@thickness, color=\keyboard@drawcolor, fill=\keyboard@fillcolor]
+\tikzstyle{keyboardtext}=[anchor=base, color=\keyboard@color, scale=\keyboard@textscale]
+
 \newcommand*{\keyboard@key}[5]{
 \draw (#1*\keyboard@bs,#2*\keyboard@bs)
-  node[draw, minimum width=#3*\keyboard@bs, minimum height=#4*\keyboard@bs, rectangle, color=\keyboard@color, fill=\keyboard@fillcolor, thick] {}
-  node[anchor=base, color=\keyboard@color, yshift=-0.7*\keyboard@bs] {#5}
+  node[draw, minimum width=#3*\keyboard@bs, minimum height=#4*\keyboard@bs, rectangle, keyboardkey] {}
+  node[keyboardtext, yshift=-0.7*\keyboard@bs] {#5}
   ;
 }
 
 \newcommand{\keyboard@nkey}[3]{\keyboard@key{#1}{#2}{4}{4}{#3}}
 
 \newcommand{\keyboard@ekey}[1]{%
-\filldraw[color=\keyboard@color, fill=\keyboard@fillcolor, thick]
+\filldraw[keyboardkey]
  (54*\keyboard@bs,16*\keyboard@bs) --
  (60*\keyboard@bs,16*\keyboard@bs) --
  (60*\keyboard@bs,8*\keyboard@bs) --
  (55*\keyboard@bs,8*\keyboard@bs) --
  (55*\keyboard@bs,12*\keyboard@bs) --
  (54*\keyboard@bs,12*\keyboard@bs) --
- cycle node[anchor=base, color=\keyboard@color, xshift=3.5*\keyboard@bs, yshift=-0.5*\keyboard@bs] {#1} ;
+ cycle node[keyboardtext, xshift=3.5*\keyboard@bs, yshift=-0.5*\keyboard@bs] {#1}
+ ;
 }
 
 \newcommand*{\keyboard@apply}{%
