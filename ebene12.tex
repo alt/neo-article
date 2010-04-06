@@ -8,7 +8,8 @@
 \fontspec{DejaVu Sans Mono}
 \newcommand{\two}[2]{\small %
 	\raisebox{-.5ex}{\kern-.5ex #1}%
-	\raisebox{.5ex}{\kern.5ex #2}} % Bessere Idee, vielleicht übereinander?
+	\raisebox{.5ex}{\kern.5ex #2}
+}% Draws two Glyphes: the second ‘upper right’ of the first
 \drawkeyboard{
   basesize = 0.18cm,
   textscale = 0.9,
@@ -16,6 +17,9 @@
   color = black,
   drawcolor = black!10,
   fillcolor = black!5,
+  centerhook = \underline,
+  homerowhook = \textbf,
+  nonneoglyphhook = {\scriptsize\textcolor{black!70}},
   strgl=Strg,
   osl={},
   altl=Alt,
