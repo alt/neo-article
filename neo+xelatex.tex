@@ -102,6 +102,14 @@ Auf der rechten Tastaturhälfte findet sich auf der vierten Ebene eine Wiederhol
 
 Damit ist die Vielfalt von Neo noch nicht erschöpft: Für kurze griechische Wörter in einem deutschen Text, vor allem aber für Formelvariablen gibt es die fünfte Ebene, die durch gleichzeitiges Drücken von \taste{Shift}, \taste{Mod 3} und z.\,B. \taste{a} bedient wird\footnote{Man gewöhnt sich schnell an diese Kombinationen, ohne die Finger zu verrenken.} – es resultiert ein \taste{$\alpha$}. Das klingt nicht sehr ergonomisch, ist aber immer noch einfacher, als auf ein ganz anderes Layout umzustellen, nur für ein paar Zeichen; für griechischen Fließtext ist natürlich ein rein griechisches Layout zu bevorzugen. Neben den griechischen Kleinbuchstaben (die mit allen nötigen Akzenten versehen werden können!) sind noch wenige andere Zeichen auf dieser Ebene.
 
+\begin{center}
+\leavevmode\kern-.01\textwidth%
+\includegraphics[width=.52\textwidth]{ebene5}\kern-.2em%
+\includegraphics[width=.52\textwidth]{ebene6}
+\captionof{figure}{Ebene 5: Griechisch, Ebene 6: Mathematik}
+\end{center}
+\fixme{Drinlassen oder nicht? Wenn ja: Positionierung?}
+
 Schließlich bietet die Ebene~6, zu erreichen über gleichzeitiges Drücken von \taste{Mod 3} und \taste{Mod 4}, noch eine weitere Vielfalt an Sonderzeichen, vor allem mathematischen Symbolen und einigen griechischen Großbuchstaben.
 
 \fixme{Grafik vom nummernblock (.501 textwidth)}
@@ -110,7 +118,7 @@ Nach dem gleichen Ebenensystem ist der Nummernblock belegt, der außer den Zahle
 \subsection{Anordnung der Tasten}
 Wie kann man sich denn nun all diese Tasten merken? Oft fällt es schon schwer, sich alle normalen Tasten zu merken, aber dann gleich 6 Zeichen pro Taste?
 
-Hier hilft die sinngemäße Anordnung: Die Taste |a| hat die Zeichen |a A| sowie |{| \includegraphics{neo1.pdf}. Vier davon kann man sich phonetisch oder der Glyphe nach merken. Auf den Formel-Ebenen wurde darauf geachtet, dass die Formelzeichen mnemonisch mit der Buchstabentaste in Bezug stehen.  Die Sonderzeichenebene ordnet die Zeichen nach Sinngruppen; so ist etwa jedes der Zeichenpaare |()<>{}[]›‹‚‘| jeweils mit Zeige- und Mittelfinger einer Hand in der gleichen Tastenreihe einzugeben.  Die Steuerungsebene schließlich enthält Cursor- und Ziffernblock in der von gängigen Tastaturen gewohnten Anordnung an der Grundstellung der beiden Hände. (Mit Erweiterungen: links neben der linken Pfeiltaste ist \taste{Pos 1}, also „ganz links“, oberhalb dieser Taste ist \taste{Bild hoch}, also „ganz hoch“ etc.
+Hier hilft die sinngemäße Anordnung: Die Taste |a| hat die Zeichen |a A| sowie |{| \includegraphics{neo1}. Vier davon kann man sich phonetisch oder der Glyphe nach merken. Auf den Formel-Ebenen wurde darauf geachtet, dass die Formelzeichen mnemonisch mit der Buchstabentaste in Bezug stehen.  Die Sonderzeichenebene ordnet die Zeichen nach Sinngruppen; so ist etwa jedes der Zeichenpaare |()<>{}[]›‹‚‘| jeweils mit Zeige- und Mittelfinger einer Hand in der gleichen Tastenreihe einzugeben.  Die Steuerungsebene schließlich enthält Cursor- und Ziffernblock in der von gängigen Tastaturen gewohnten Anordnung an der Grundstellung der beiden Hände. (Mit Erweiterungen: links neben der linken Pfeiltaste ist \taste{Pos 1}, also „ganz links“, oberhalb dieser Taste ist \taste{Bild hoch}, also „ganz hoch“ etc.
 
 Es wird versucht, das Layout so zu gestalten, dass es sehr intuitiv verwendet werden kann und man kein „Raketentechniker“ sein muss, um es zu verstehen.\footnote{Das Keyboarddesign „Space Cadett“ hatte dieses Problem, aber auf Hardwareseite.}
 
@@ -125,7 +133,7 @@ Optimale Ergebnisse erhält man natürlich durch die Kombination einer ergonomis
 Der \TeX-Nutzer wird sich nun fragen, was das mit ihm zu tun hat: Die ganzen Zeichen kann man auch als \TeX-Befehle über ASCII eingeben, man braucht weder Unicode noch \XeTeX\ und vor allem kein Neo. Das stimmt auch prinzipiell. Aber damit wird der Quellcode ziemlich unleserlich. Wer ein |\"a| schöner findet als ein |ä| im Quellcode, muss diesen Artikel eigentlich nicht weiterlesen. Deutlich wird die bessere Lesbarkeit vor allem im Formelsatz, der meist nur schlecht auf einen Blick zu erfassen ist. Man vergleiche die beiden folgenden Eingaben:\\ \\
 \verb1 a) \[\int_{-\infty}^\infty d\Omega \left\|\sqrt{\frac{3}{8\pi}}1
 \verb1                         \sin\theta e^{i\phi}\right\|^2 \geq 0\]1
-\verb| b)| \raisebox{-.8ex}{\includegraphics{neo2.pdf}}
+\verb| b)| \raisebox{-.8ex}{\includegraphics{neo2}}
 
 Für die Ausgabe der Formel mit dem angegeben Code – wir wollen ja nicht schummeln! … Außer ein wenig kerning-Korrektur
 Mit wenigen kurzen Definitionen erhält man jeweils das gleiche Resultat:
