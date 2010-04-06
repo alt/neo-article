@@ -6,6 +6,7 @@
 \begin{document}
 \begin{preview}
 \fontspec{DejaVu Sans Mono}
+\newcommand{\two}[2]{\small #1\,#2} % Bessere Idee, vielleicht übereinander?
 \drawkeyboard{
   basesize = 0.18cm,
   textscale = 1.0,
@@ -30,8 +31,8 @@
   z=z,
   b=b,
   m=m,
-  comma={,},
-  dot={.},
+  comma=\two{,}{–},
+  dot=\two{.}{•},
   j=j,
   miir=M2,
   miiil=M3,
@@ -58,21 +59,21 @@
   g=g,
   f=f,
   q=q,
-  sz=ß,
+  sz=\two{ß}{ẞ},
   tiii=T3,
   enter=LF,
-  ti=T1,
-  ni=1,
-  nii=2,
-  niii=3,
-  niv=4,
-  nv=5,
-  nvi=6,
-  nvii=7,
-  nviii=8,
-  nix=9,
-  zero=0,
-  dash={-},
+  ti=T1\^{o},
+  ni=\two{1}{°},
+  nii=\two{2}{§},
+  niii=\two{3}{l},
+  niv=\two{4}{»},
+  nv=\two{5}{«},
+  nvi=\two{6}{\$},
+  nvii=\two{7}{€},
+  nviii=\two{8}{„},
+  nix=\two{9}{“},
+  zero=\two{0}{”},
+  dash=\two{-}{-},
   tii=T2,
   del=Del
 }
