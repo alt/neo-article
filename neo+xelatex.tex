@@ -83,7 +83,7 @@ Seit dieser Zeit wird \neoii entwickelt, dessen Referenz Ende März eingefroren 
 \newpage
 \begin{center}
 \includegraphics[width=.7\textwidth]{ebene12}
-\captionof{figure}{\neoii – erste und zweite Ebene, Buchstaben und Spezialzeichen. (Großbuchstaben zur Übersicht nicht dargestellt.) \newline \textsf{M1}\,–\,\textsf{M3} stehen für die „Modifier“, vergleichbar \textsf{Shift} (\textsf{M2}) und \textsf{Alt Gr} (\textsf{M3}). \textsf{T1}\,–\,\textsf{T3} sind tote Tasten, die eine Vielzahl an Diakritika bieten – zur Übersicht sind nicht die einzelnen Zeichen dargestellt.}
+\captionof{figure}{\neoii – erste und zweite Ebene, Buchstaben und Spezialzeichen. (Großbuchstaben zur Übersicht nicht dargestellt.) \newline \textsf{M1}\,–\,\textsf{M3} stehen für die „Modifier“, vergleichbar \textsf{Shift} (\textsf{M2}) und \textsf{Alt Gr}~(\textsf{M3}). \textsf{T1}\,–\,\textsf{T3} sind tote Tasten, die eine Vielzahl an Diakritika bieten – zur Übersicht sind nicht die einzelnen Zeichen dargestellt.}
 \end{center}
 Hauptänderung in Version 2.0 war jedoch die Einführung von „höheren Ebenen“ der Tastatur,\footnote{Nur in der Software! Neo ist für deutsche Standardtastaturen entwickelt, s.\,u.} insgesamt ist jede Taste sechsfach belegt: Auf Ebene~1 Kleinbuchstaben und Satzzeichen. (\taste{abc.,}) Diese werden durch einfachen Druck auf die Taste erzeugt. Auf der Ebene~2 sind alle Zeichen, die durch Drücken von Shift (oder „Umschalt“) erzeugt werden: Großbuchstaben \taste{A}, wenige Sonderzeichen \taste{§} und Zeichen wie \taste{»« „“}, die für typographisch korrektes Schreiben (statt \taste{"}) verwendet werden. Ebene~3 wird durch \taste{Alt Gr} verwendet, in dieser Ebene sind Sonderzeichen, die zum Programmieren verwendet werden wie |()\/{}_[ ]^!<>|. Um klare Bezeichnungen zu erreichen, wurde \taste{Alt Gr} bei \neoii in \taste{Mod 3} umbenannt.
 
@@ -108,19 +108,17 @@ Damit ist die Vielfalt von Neo noch nicht erschöpft: Für kurze griechische Wö
 \includegraphics[width=.52\textwidth]{ebene6}
 \captionof{figure}{Ebene 5: Griechisch, Ebene 6: Mathematik}
 \end{center}
-\fixme{Drinlassen oder nicht? Wenn ja: Positionierung?}
 
-Schließlich bietet die Ebene~6, zu erreichen über gleichzeitiges Drücken von \taste{Mod 3} und \taste{Mod 4}, noch eine weitere Vielfalt an Sonderzeichen, vor allem mathematischen Symbolen und einigen griechischen Großbuchstaben.
+Schließlich bietet die Ebene~6, zu erreichen über gleichzeitiges Drücken von \taste{Mod 3} und \taste{Mod 4}, noch eine weitere Vielfalt an Sonderzeichen, vor allem mathematischen Symbolen und einigen griechischen Großbuchstaben. Eine weitere große Zahl mathematischer Zeichen bietet der Nummernblock, der ebenfalls in 6 Ebenen belegt ist und zur Übersicht hier nicht dargestellt wurde.
 
-\fixme{Grafik vom nummernblock (.501 textwidth)}
 Nach dem gleichen Ebenensystem ist der Nummernblock belegt, der außer den Zahlen (erste Ebene) und den Steuerzeichen (vierte Ebene, redundant zu denen auf der vierten Ebene linke Hand) seltenere mathematische Relationen und Symbole enthält.
 
 \subsection{Anordnung der Tasten}
 Wie kann man sich denn nun all diese Tasten merken? Oft fällt es schon schwer, sich alle normalen Tasten zu merken, aber dann gleich 6 Zeichen pro Taste?
 
-Hier hilft die sinngemäße Anordnung: Die Taste |a| hat die Zeichen |a A| sowie |{| \includegraphics{neo1}. Vier davon kann man sich phonetisch oder der Glyphe nach merken. Auf den Formel-Ebenen wurde darauf geachtet, dass die Formelzeichen mnemonisch mit der Buchstabentaste in Bezug stehen.  Die Sonderzeichenebene ordnet die Zeichen nach Sinngruppen; so ist etwa jedes der Zeichenpaare |()<>{}[]›‹‚‘| jeweils mit Zeige- und Mittelfinger einer Hand in der gleichen Tastenreihe einzugeben.  Die Steuerungsebene schließlich enthält Cursor- und Ziffernblock in der von gängigen Tastaturen gewohnten Anordnung an der Grundstellung der beiden Hände. (Mit Erweiterungen: links neben der linken Pfeiltaste ist \taste{Pos 1}, also „ganz links“, oberhalb dieser Taste ist \taste{Bild hoch}, also „ganz hoch“ etc.
+Hier hilft die sinngemäße Anordnung: Die Taste |a| hat die Zeichen |a A| sowie |{| \includegraphics{neo1}. Vier davon kann man sich phonetisch oder der Glyphe nach merken. Auf den Formel-Ebenen wurde darauf geachtet, dass die Formelzeichen mnemonisch mit der Buchstabentaste in Bezug stehen.  Die Sonderzeichenebene ordnet die Zeichen nach Sinngruppen; so ist etwa jedes der Zeichenpaare |()<>{}[]›‹‚‘| jeweils mit Zeige- und Mittelfinger einer Hand in der gleichen Tastenreihe einzugeben.  Die Steuerungsebene schließlich enthält Cursor- und Ziffernblock in der gewohnten Anordnung, nur eben in der Grundstellung der beiden Hände. (Mit Erweiterungen: links neben der linken Pfeiltaste ist \taste{Pos 1}, also „ganz links“, oberhalb dieser Taste ist \taste{Bild hoch}, also „ganz hoch“ etc.)
 
-Es wird versucht, das Layout so zu gestalten, dass es sehr intuitiv verwendet werden kann und man kein „Raketentechniker“ sein muss, um es zu verstehen.\footnote{Das Keyboarddesign „Space Cadett“ hatte dieses Problem, aber auf Hardwareseite.}
+Allgemein wird versucht, das Layout so zu gestalten, dass es sehr intuitiv verwendet werden kann und man kein „Raketentechniker“ sein muss, um es zu verstehen\footnote{Das Keyboarddesign „Space Cadett“ hatte dieses Problem, aber auf Hardwareseite.} – Neo soll auch im Alltag bestehen können.
 
 Dank der großen Zeichenvielfalt im Unicode reichen aber die sechs Tastaturebenen nicht aus, um alle mehr oder weniger häufig gebrauchten Zeichen abzudecken. Daher gibt es weiterhin die unter Linux und Solaris bereits übliche Compose-Taste: Drückt man \taste{Mod 3} und \taste{Tab}, danach (zwei oder drei) weitere Tasten, so werden diese sinngemäß „kombiniert“ und ergeben ein neues Zeichen. Die Eingabefolge \taste{Compose a e} ergibt das Zeichen \taste{æ}, die Folge \taste{Compose :)} ergibt das Unicode-Zeichen für ein Smiley. Das klingt wiederum sehr kompliziert und unergonomisch, doch wenn man das Zeichen oft benötigt, lohnt es sich, einmal in der Liste nachzusehen, wie es erzeugt wird und es dann stets direkt eingeben zu können, statt in einem Formeleditor o.\,ä. nachzuschlagen.
 
@@ -135,7 +133,6 @@ Der \TeX-Nutzer wird sich nun fragen, was das mit ihm zu tun hat: Die ganzen Zei
 \verb1                         \sin\theta e^{i\phi}\right\|^2 \geq 0\]1
 \verb| b)| \raisebox{-.8ex}{\includegraphics{neo2}}
 
-Für die Ausgabe der Formel mit dem angegeben Code – wir wollen ja nicht schummeln! … Außer ein wenig kerning-Korrektur
 Mit wenigen kurzen Definitionen erhält man jeweils das gleiche Resultat:
 \[\int_{-\infty}^\infty d\Omega \left\|\sqrt{\frac{3}{8\pi}} \sin\theta e^{i\phi}\right\|^2 \geq 0\]
 
@@ -173,7 +170,7 @@ In der DTK 3/2008 hat Markus Kohm berichtet, dass das große scharfe S normiert 
 Liebhaber der gebrochenen Schriften kommen auch auf ihre Kosten, da das lange s \raisebox{-.4ex}{\includegraphics{neo4}} ebenfalls in Neo vorhanden ist; mit einer richtig kodierten gebrochenen Schrift kann man also einfach „\raisebox{-.14ex}{\includegraphics{neo5}}“ schreiben – natürlich auch in Antiqua.
 
 Dank der vielen „toten Tasten“, also diakritischen Zeichen, ist jeder Buchstabe aller europäischen, lateinisch basierten Alphabete, sowie Griechisch schreibbar – optimal für vielsprachigen Satz.
-\fixme{Weitere Anmerkungen?}
+%\fixme{Weitere Anmerkungen?}
 
 \section{Ausblick}
 Nicht nur durch die Ergonomie, die jedes Schreiben am Rechner angenehmer macht, sondern auch durch die große Anzahl an leicht erreichbaren Sonderzeichen kann \neoii die Arbeit mit modernen \TeX-Varianten also sehr viel einfacher machen und erleichtert die Lesbarkeit fremden Codes. Damit ist endlich die Zeit von active characters für Standardeingaben vorbei, und die \TeX-Welt ist in der Zeit moderner Kodierungen angekommen.
