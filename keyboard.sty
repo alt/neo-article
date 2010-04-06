@@ -12,7 +12,7 @@
 %% 
 %% Do not distribute a modified version of this file under the same name.
 %% 
-%% File: keyoard.dtx by Dennis Heidsiek, mail: HeidsiekB at aol dot com
+%% File: keyboard.dtx by Dennis Heidsiek, mail: HeidsiekB at aol dot com
 %%
 %% You can get the latest version at http://github.com/zephyr/latex-keyboard
 %%
@@ -22,7 +22,7 @@
 \RequirePackage{pgfkeys}
 
 \ProvidesPackage{keyboard}
-  [2010/04/05 v0.1c provides keyboards, initial experimental version.]
+  [2010/04/05 v0.1e provides keyboards, initial experimental version.]
 
 
 \pgfkeys{
@@ -36,6 +36,9 @@
   fillcolour/.style = {fillcolor=#1},
   drawcolor/.store in = \keyboard@drawcolor,
   drawcolour/.style = {drawcolor=#1},
+  centerhook/.store in = \keyboard@hook@c,
+  homerowhook/.store in = \keyboard@hook@hr,
+  nonneoglyphhook/.store in = \keyboard@hook@nng,
   strgl/.store in = \keyboard@strgl,
   osl/.store in = \keyboard@osl,
   altl/.store in = \keyboard@altl,
@@ -98,7 +101,6 @@
   dash/.store in = \keyboard@dash,
   tii/.store in = \keyboard@tii,
   bsp/.store in = \keyboard@bsp
-  % del/.store in = keyboard del
 }
 
 \pgfkeys{
@@ -109,6 +111,9 @@
   color = black,
   fillcolor = black!10,
   drawcolor = black,
+  centerhook = {},
+  homerowhook = {},
+  nonneoglyphhook = {},
   strgl={},
   osl={},
   altl={},
@@ -170,8 +175,7 @@
   zero={},
   dash={},
   tii={},
-  bsp={},
-  %del={}
+  bsp={}
 }
 
 
@@ -202,18 +206,18 @@
 \newcommand*{\keyboard@apply}{%
 \begin{tikzpicture}
 
-\keyboard@key{3}{2}{6}{4}{\keyboard@strgl}
-\keyboard@key{8}{2}{4}{4}{\keyboard@osl}
-\keyboard@key{13}{2}{6}{4}{\keyboard@altl}
+\keyboard@key{3}{2}{6}{4}{\keyboard@hook@nng{\keyboard@strgl}}
+\keyboard@key{8}{2}{4}{4}{\keyboard@hook@nng{\keyboard@osl}}
+\keyboard@key{13}{2}{6}{4}{\keyboard@hook@nng{\keyboard@altl}}
 \keyboard@key{27}{2}{22}{4}{\keyboard@space}
 
-\keyboard@key{41}{2}{6}{4}{\keyboard@altr}
-\keyboard@key{47}{2}{6}{4}{\keyboard@osr}
-\keyboard@key{53}{2}{6}{4}{\keyboard@menu}
-\keyboard@key{57.5}{2}{5}{4}{\keyboard@strgr}
+\keyboard@key{41}{2}{6}{4}{\keyboard@hook@nng{\keyboard@altr}}
+\keyboard@key{47}{2}{6}{4}{\keyboard@hook@nng{\keyboard@osr}}
+\keyboard@key{53}{2}{6}{4}{\keyboard@hook@nng{\keyboard@menu}}
+\keyboard@key{57.5}{2}{5}{4}{\keyboard@hook@nng{\keyboard@strgr}}
 
-\keyboard@key{2.5}{6}{5}{4}{\keyboard@miil}
-\keyboard@nkey{7}{6}{\keyboard@mivl}
+\keyboard@key{2.5}{6}{5}{4}{\keyboard@hook@nng{\keyboard@miil}}
+\keyboard@nkey{7}{6}{\keyboard@hook@nng{\keyboard@mivl}}
 \keyboard@nkey{11}{6}{\keyboard@ue}
 \keyboard@nkey{15}{6}{\keyboard@oe}
 \keyboard@nkey{19}{6}{\keyboard@ae}
@@ -224,24 +228,24 @@
 \keyboard@nkey{39}{6}{\keyboard@comma}
 \keyboard@nkey{43}{6}{\keyboard@dot}
 \keyboard@nkey{47}{6}{\keyboard@j}
-\keyboard@key{54.5}{6}{11}{4}{\keyboard@miir}
+\keyboard@key{54.5}{6}{11}{4}{\keyboard@hook@nng{\keyboard@miir}}
 
-\keyboard@key{3.5}{10}{7}{4}{\keyboard@miiil}
-\keyboard@nkey{9}{10}{\keyboard@u}
-\keyboard@nkey{13}{10}{\keyboard@i}
-\keyboard@nkey{17}{10}{\keyboard@a}
-\keyboard@nkey{21}{10}{\keyboard@e}
+\keyboard@key{3.5}{10}{7}{4}{\keyboard@hook@nng{\keyboard@miiil}}
+\keyboard@nkey{9}{10}{\keyboard@hook@hr{\keyboard@u}}
+\keyboard@nkey{13}{10}{\keyboard@hook@hr{\keyboard@i}}
+\keyboard@nkey{17}{10}{\keyboard@hook@hr{\keyboard@a}}
+\keyboard@nkey{21}{10}{\keyboard@hook@hr{\keyboard@hook@c{\keyboard@e}}}
 \keyboard@nkey{25}{10}{\keyboard@o}
 \keyboard@nkey{29}{10}{\keyboard@s}
-\keyboard@nkey{33}{10}{\keyboard@n}
-\keyboard@nkey{37}{10}{\keyboard@r}
-\keyboard@nkey{41}{10}{\keyboard@t}
-\keyboard@nkey{45}{10}{\keyboard@d}
+\keyboard@nkey{33}{10}{\keyboard@hook@hr{\keyboard@hook@c{\keyboard@n}}}
+\keyboard@nkey{37}{10}{\keyboard@hook@hr{\keyboard@r}}
+\keyboard@nkey{41}{10}{\keyboard@hook@hr{\keyboard@t}}
+\keyboard@nkey{45}{10}{\keyboard@hook@hr{\keyboard@d}}
 \keyboard@nkey{49}{10}{\keyboard@y}
-\keyboard@nkey{53}{10}{\keyboard@miiir}
-\keyboard@ekey{\keyboard@enter}
+\keyboard@nkey{53}{10}{\keyboard@hook@nng{\keyboard@miiir}}
+\keyboard@ekey{\keyboard@hook@nng{\keyboard@enter}}
 
-\keyboard@key{3}{14}{6}{4}{\keyboard@tab}
+\keyboard@key{3}{14}{6}{4}{\keyboard@hook@nng{\keyboard@tab}}
 \keyboard@nkey{8}{14}{\keyboard@x}
 \keyboard@nkey{12}{14}{\keyboard@v}
 \keyboard@nkey{16}{14}{\keyboard@l}
@@ -253,9 +257,9 @@
 \keyboard@nkey{40}{14}{\keyboard@f}
 \keyboard@nkey{44}{14}{\keyboard@q}
 \keyboard@nkey{48}{14}{\keyboard@sz}
-\keyboard@nkey{52}{14}{\keyboard@tiii}
+\keyboard@nkey{52}{14}{\keyboard@hook@nng{\keyboard@tiii}}
 
-\keyboard@nkey{2}{18}{\keyboard@ti}
+\keyboard@nkey{2}{18}{\keyboard@hook@nng{\keyboard@ti}}
 \keyboard@nkey{6}{18}{\keyboard@ni}
 \keyboard@nkey{10}{18}{\keyboard@nii}
 \keyboard@nkey{14}{18}{\keyboard@niii}
@@ -267,8 +271,8 @@
 \keyboard@nkey{38}{18}{\keyboard@nix}
 \keyboard@nkey{42}{18}{\keyboard@zero}
 \keyboard@nkey{46}{18}{\keyboard@dash}
-\keyboard@nkey{50}{18}{\keyboard@tii}
-\keyboard@key{56}{18}{8}{4}{\keyboard@bsp}
+\keyboard@nkey{50}{18}{\keyboard@hook@nng{\keyboard@tii}}
+\keyboard@key{56}{18}{8}{4}{\keyboard@hook@nng{\keyboard@bsp}}
 
 \end{tikzpicture}
 }
