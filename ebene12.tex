@@ -6,21 +6,23 @@
 \begin{document}
 \begin{preview}
 \fontspec{DejaVu Sans Mono}
-\newcommand{\two}[2]{\small #1\,#2} % Bessere Idee, vielleicht übereinander?
+\newcommand{\two}[2]{\small %
+	\raisebox{-.5ex}{\kern-.5ex #1}%
+	\raisebox{.5ex}{\kern.5ex #2}} % Bessere Idee, vielleicht übereinander?
 \drawkeyboard{
   basesize = 0.18cm,
-  textscale = 1.0,
-  thickness = 0.8pt,
+  textscale = 0.9,
+  thickness = 1pt,
   color = black,
   drawcolor = black!10,
-  fillcolor = white,
+  fillcolor = black!5,
   strgl=Strg,
-  osl=OS,
+  osl={},
   altl=Alt,
   space={Leerzeichen},
-  altr=Alt,
-  osr=OS,
-  menu={Me},
+  altr=M4,
+  osr={},
+  menu={},
   strgr=Strg,
   miil=M2,
   mivl=M4,
@@ -61,8 +63,8 @@
   q=q,
   sz=\two{ß}{ẞ},
   tiii=T3,
-  enter=LF,
-  ti=T1\^{o},
+  enter={},
+  ti=T1,
   ni=\two{1}{°},
   nii=\two{2}{§},
   niii=\two{3}{l},
@@ -75,7 +77,7 @@
   zero=\two{0}{”},
   dash=\two{-}{-},
   tii=T2,
-  del=Del
+  del=Entf
 }
 \end{preview}
 \end{document}
