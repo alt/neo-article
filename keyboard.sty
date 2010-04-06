@@ -5,14 +5,14 @@
 %% The original source files were:
 %%
 %% keyboard.dtx  (with options: `package')
-%%
+%% 
 %% THIS IS A AUTOMATICALLY GENERATED FILE CONTAINING EXPERIMENTAL CODE.
-%%
+%% 
 %% Do not distribute this file without also distributing the source files specified above.
-%%
+%% 
 %% Do not distribute a modified version of this file under the same name.
-%%
-%% File: keyboard.dtx by Dennis Heidsiek, mail: HeidsiekB at aol dot com
+%% 
+%% File: keyoard.dtx by Dennis Heidsiek, mail: HeidsiekB at aol dot com
 %%
 %% You can get the latest version at http://github.com/zephyr/latex-keyboard
 %%
@@ -97,7 +97,8 @@
   zero/.store in = \keyboard@zero,
   dash/.store in = \keyboard@dash,
   tii/.store in = \keyboard@tii,
-  del/.store in = \keyboard@del
+  bsp/.store in = \keyboard@bsp
+  % del/.store in = keyboard del
 }
 
 \pgfkeys{
@@ -169,7 +170,8 @@
   zero={},
   dash={},
   tii={},
-  del={}
+  bsp={},
+  %del={}
 }
 
 
@@ -266,7 +268,7 @@
 \keyboard@nkey{42}{18}{\keyboard@zero}
 \keyboard@nkey{46}{18}{\keyboard@dash}
 \keyboard@nkey{50}{18}{\keyboard@tii}
-\keyboard@key{56}{18}{8}{4}{\keyboard@del}
+\keyboard@key{56}{18}{8}{4}{\keyboard@bsp}
 
 \end{tikzpicture}
 }
@@ -277,6 +279,6 @@
   \keyboard@apply
 }
 
-%%
+%% 
 %%
 %% End of file `keyboard.sty'.
