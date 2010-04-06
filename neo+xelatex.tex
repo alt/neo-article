@@ -37,7 +37,7 @@ xspace
 }
 @Misc{plum,
   title = {PLUM keyboard},
-  author = {Wikipedia, the free encyclopedia},
+  author = {{Wikipedia, the free encyclopedia}},
   note ={\url{http://en.wikipedia.org/wiki/PLUM_keyboard}}
 }
 @Misc{ristome,
@@ -72,7 +72,7 @@ Seit der weiten Verbreitung von \XeTeX\ und der fortschreitenden Nutzbarkeit von
 Seit den Anfängen des Maschinenschreibens hat sich an der Form und Belegung der Tastaturen wenig geändert: Die Form der Schreibmaschinentastatur wurde für Computer übernommen und seitdem beibehalten. Minimale Anpassungen an einzelne Sprachen machten aus dem amerikanischen „\hbox{qwerty}“ (benannt nach der oberen Tastenreihe von links nach rechts gelesen) das deutsche „qwertz“ und das französische „azerty“. Es stellt sich daher die Frage, warum die Tasten genau auf diese Weise angeordnet sind. Und warum sind sie überhaupt schräg versetzt und nicht in Form einer Matrix angeordnet?
 
 \section{Die Vergangenheit}
-Die Antwort darauf liegt weit zurück: Im Jahren 1868 hat Christopher Latham Sholes ein Schreibmaschinenmodell mit der bekannten |qwerty|-Anordnung hergestellt.\cite{patentqwerty} Die Versetzung der Tasten war aus rein mechanischen Gründen nötig, damit die Typenhebel für alle Buchstaben Platz fanden. Die häufigsten Buchstaben wurden halbkreisförmig angeordnet, die restlichen Buchstaben dazwischen verteilt. Damit sich die Hebel nicht verkanten, musste darauf geachtet werden, dass häufig nacheinander angeschlagene Tasten (wie |qu|) nicht nebeneinander lagen. Das alles ergibt allerdings keine ergonomische Tastatur, die mit dem 10-Finger-System blind, schnell und angenehm zu bedienen ist, denn man muss recht häufig die Finger aus der Grundstellung bewegen, um die Tasten in der oberen oder unteren Reihe zu erreichen – z.\,B. das sehr häufige „e“ auf der oberen Reihe. Jede solche Bewegung bedeutet aber ein Verlust an Geschwindigkeit und mehr Arbeit für die Finger, was zu schnelleren Ermüdungserscheinungen führt und Gelenkschmerzen verursachen kann.
+Die Antwort darauf liegt weit zurück: Im Jahren 1868 hat Christopher Latham Sholes ein Schreibmaschinenmodell mit der bekannten |qwerty|-Anordnung hergestellt. \cite{patentqwerty} Die Versetzung der Tasten war aus rein mechanischen Gründen nötig, damit die Typenhebel für alle Buchstaben Platz fanden. Die häufigsten Buchstaben wurden halbkreisförmig angeordnet, die restlichen Buchstaben dazwischen verteilt. Damit sich die Hebel nicht verkanten, musste darauf geachtet werden, dass häufig nacheinander angeschlagene Tasten (wie |qu|) nicht nebeneinander lagen. Das alles ergibt allerdings keine ergonomische Tastatur, die mit dem 10-Finger-System blind, schnell und angenehm zu bedienen ist, denn man muss recht häufig die Finger aus der Grundstellung bewegen, um die Tasten in der oberen oder unteren Reihe zu erreichen – z.\,B. das sehr häufige „e“ auf der oberen Reihe. Jede solche Bewegung bedeutet aber ein Verlust an Geschwindigkeit und mehr Arbeit für die Finger, was zu schnelleren Ermüdungserscheinungen führt und Gelenkschmerzen verursachen kann.
 
 Schon im Jahre 1932 hat August Dvorak die ungeschickte Belegung als solche erkannt und nach längeren Studien eine neue Tastaturbelegung erstellt, 1936 wurde das Patent \cite{patentdvorak} angenommen. Es folgten einige Jahre später weitere moderne Entwicklungen wie de-ergo und RISTOME, die aber bis heute keine große Nutzerbasis haben. \cite{deergo,ristome} Das liegt einerseits am niedrigen Bekanntheitsgrad alternativer Layouts, andererseits am Problem des Umlernens: Selbst wenn man sich vorgenommen hat, eine neue Belegung zu erlernen (erfahrungsgemäß benötigt man ca. 2 Wochen, um wieder einigermaßen flüssig schreiben zu können), ist es immer ein Problem, an anderen Computern zu arbeiten – der Leser kennt dieses Problem vielleicht vom Umstieg von Word auf \LaTeX\ – eine Investition, die sich aber meist doch sehr gelohnt hat.
 
@@ -81,8 +81,8 @@ Im Jahre 2004 hat Hanno Behrens eine weitere ergonomische Tastatur entwickelt, d
 \section{Gegenwart}
 Seit dieser Zeit wird \neoii entwickelt, dessen Referenz Ende März eingefroren wurde und das somit stabil ist. \cite{neo2} Gegenüber der ersten Version wurden viele grundlegende Änderungen vorgenommen, wobei die Belegung der Buchstaben zu großen Teilen gleich blieb. Die Abbildung zeigt die aktuelle Belegung. Diese weist nach langen Tests im alltäglichen Umgang vieler Entwickler sowie durch umfangreiche Diskussionen eine optimierte Verteilung der Buchstaben auf.
 \begin{center}
-%\includegraphics[width=.8\textwidth]{ebene2}
-\captionof{figure}{\neoii – zweite Ebene mit Großbuchstaben}
+\includegraphics[width=.7\textwidth]{ebene1}
+\captionof{figure}{\neoii – erste Ebene, Kleinbuchstaben.\newline \textsf{M1}\,–\,\textsf{M3} stehen für die „Modifier“, vergleichbar \textsf{Shift} (\textsf{M2}) und \textsf{Alt Gr} (\textsf{M3}). \textsf{T1}\,–\,\textsf{T3} sind tote Tasten, die eine Vielzahl an Diakritika bieten.}
 \end{center}
 Hauptänderung in Version 2.0 war jedoch die Einführung von „höheren Ebenen“ der Tastatur,\footnote{Nur in der Software! Neo ist für deutsche Standardtastaturen entwickelt, s.\,u.} insgesamt ist jede Taste sechsfach belegt: Auf Ebene~1 Kleinbuchstaben und Satzzeichen. (\taste{abc.,}) Diese werden durch einfachen Druck auf die Taste erzeugt. Auf der Ebene~2 sind alle Zeichen, die durch Drücken von Shift (oder „Umschalt“) erzeugt werden: Großbuchstaben \taste{A}, wenige Sonderzeichen \taste{§} und Zeichen wie \taste{»« „“}, die für typographisch korrektes Schreiben (statt \taste{"}) verwendet werden. Ebene~3 wird durch \taste{Alt Gr} verwendet, in dieser Ebene sind Sonderzeichen, die zum Programmieren verwendet werden wie |()\/{}_[ ]^!<>|. Um klare Bezeichnungen zu erreichen, wurde \taste{Alt Gr} bei \neoii in \taste{Mod 3} umbenannt.
 
@@ -93,9 +93,10 @@ Bei einer normalen Tastatur muss die rechte Hand einen Weg von bis zu 5cm zurüc
 Auf der rechten Tastaturhälfte findet sich auf der vierten Ebene eine Wiederholung des Ziffernblockes – alle Zahlen und Rechenzeichen sind somit in der Grundhaltung der Hand verfügbar und man muss weder die obere Zahlenreihe noch den „weit entfernten“ Zahlenblock verwenden. Zum Markieren kann wie gewohnt zusätzlich Shift gedrückt werden. Falls man viele Zahlen hintereinander eingeben muss oder sehr viel im Text (z.\,B. in einer pdf-Datei) navigieren muss, ohne zu schreiben, ist die Lock-Funktion nützlich, die analog zu Caps Lock funktioniert: Drücken beider \taste{Mod 4}-Tasten gleichzeitig lässt die Funktion einrasten und man muss nicht ständig den Finger auf der Taste lassen.
 
 \begin{center}
-%\includegraphics[width=.501\textwidth]{ebene4}%
-%\includegraphics[width=.501\textwidth]{ebene6}
-\captionof{figure}{Ebene 4: Steuerzeichen/Zahlen, Ebene 6: Sonderzeichen}
+\leavevmode\kern-.01\textwidth%
+\includegraphics[width=.52\textwidth]{ebene3}\kern-.2em%
+\includegraphics[width=.52\textwidth]{ebene4}
+\captionof{figure}{Ebene 3: Programmierzeichen, Ebene 4: Navigation, Zahlen}
 \end{center}
 
 Damit ist die Vielfalt von Neo noch nicht erschöpft: Für kurze griechische Wörter in einem deutschen Text, vor allem aber für Formelvariablen gibt es die fünfte Ebene, die durch gleichzeitiges Drücken von \taste{Shift}, \taste{Mod 3} und z.\,B. \taste{a} bedient wird\footnote{Man gewöhnt sich schnell an diese Kombinationen, ohne die Finger zu verrenken.} – es resultiert ein \taste{$\alpha$}. Das klingt nicht sehr ergonomisch, ist aber immer noch einfacher, als auf ein ganz anderes Layout umzustellen, nur für ein paar Zeichen; für griechischen Fließtext ist natürlich ein rein griechisches Layout zu bevorzugen. Neben den griechischen Kleinbuchstaben (die mit allen nötigen Akzenten versehen werden können!) sind noch wenige andere Zeichen auf dieser Ebene.
@@ -117,7 +118,7 @@ Dank der großen Zeichenvielfalt im Unicode reichen aber die sechs Tastaturebene
 \subsection{Neo ist keine Tastatur \dots{}}
 \dots{}\,sondern eine Tastaturbelegung. Neo orientiert sich an den Tasten einer handelsüblichen deutschen Tastatur, wie in den Abbildungen angedeutet. Man muss lediglich einen Treiber installieren, der auf der Homepage verfügbar ist und was meist nur ein oder zwei Klicks erfordert. Zur Zeit gibt es Treiber für Windows, Linux und Mac OS X.\footnote{Wegen Softwareproblemen sind in Mac OS X momentan die 5. und 6. Ebene über andere Tastenkombinationen und die 4. gar nicht verfügbar.}
 
-Optimale Ergebnisse erhält man natürlich durch die Kombination einer ergonomischen Belegung und einer ergonomisch geformten Tastatur, z.\,B. Matrixtastaturen (PLUM\cite{plum}) oder Konzepten wie DataHand\cite{datahand}.
+Optimale Ergebnisse erhält man natürlich durch die Kombination einer ergonomischen Belegung und einer ergonomisch geformten Tastatur, z.\,B. Matrixtastaturen (PLUM) oder Konzepten wie DataHand. \cite{plum,datahand}
 
 \section{Neo, Unicode und \XeLaTeX}
 Der \TeX-Nutzer wird sich nun fragen, was das mit ihm zu tun hat: Die ganzen Zeichen kann man auch als \TeX-Befehle über ASCII eingeben, man braucht weder Unicode noch \XeTeX\ und vor allem kein Neo. Das stimmt auch prinzipiell. Aber damit wird der Quellcode ziemlich unleserlich. Wer ein |\"a| schöner findet als ein |ä| im Quellcode, muss diesen Artikel eigentlich nicht weiterlesen. Deutlich wird die bessere Lesbarkeit vor allem im Formelsatz, der meist nur schlecht auf einen Blick zu erfassen ist. Man vergleiche die beiden folgenden Eingaben:\\ \\
