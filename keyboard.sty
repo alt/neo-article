@@ -1,0 +1,274 @@
+%%
+%% This is file `keyboard.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% keyboard.dtx  (with options: `package')
+%% 
+%% THIS IS A AUTOMATICALLY GENERATED FILE CONTAINING EXPERIMENTAL CODE.
+%% 
+%% Do not distribute this file without also distributing the source files specified above.
+%% 
+%% Do not distribute a modified version of this file under the same name.
+%% 
+%% File: keyboard.dtx by Dennis Heidsiek, mail: HeidsiekB at aol dot com
+%%
+%% You can get the latest version at http://github.com/zephyr/latex-keyboard
+%%
+
+\NeedsTeXFormat{LaTeX2e}
+\RequirePackage{tikz}
+\RequirePackage{pgfkeys}
+
+\ProvidesPackage{keyboard}
+  [2010/04/05 v0.1b provides keyboards, initial experimental version.]
+
+
+\pgfkeys{
+  /keyboard/.cd,
+  basesize/.store in = \keyboard@bs,
+  color/.store in = \keyboard@color,
+  colour/.style = {color=#1},
+  fillcolor/.store in = \keyboard@fillcolor,
+  fillcolour/.style = {fillcolor=#1},
+  drawcolor/.store in = \keyboard@drawcolor,
+  drawcolour/.style = {drawcolor=#1},
+  strgl/.store in = \keyboard@strgl,
+  osl/.store in = \keyboard@osl,
+  altl/.store in = \keyboard@altl,
+  space/.store in = \keyboard@space,
+  altr/.store in = \keyboard@altr,
+  osr/.store in = \keyboard@osr,
+  menu/.store in = \keyboard@menu,
+  strgr/.store in = \keyboard@strgr,
+  miil/.store in = \keyboard@miil,
+  mivl/.store in = \keyboard@mivl,
+  ue/.store in = \keyboard@ue,
+  oe/.store in = \keyboard@oe,
+  ae/.store in = \keyboard@ae,
+  p/.store in = \keyboard@p,
+  z/.store in = \keyboard@z,
+  b/.store in = \keyboard@b,
+  m/.store in = \keyboard@m,
+  comma/.store in = \keyboard@comma,
+  dot/.store in = \keyboard@dot,
+  j/.store in = \keyboard@j,
+  miir/.store in = \keyboard@miir,
+  miiil/.store in = \keyboard@miiil,
+  u/.store in = \keyboard@u,
+  i/.store in = \keyboard@i,
+  a/.store in = \keyboard@a,
+  e/.store in = \keyboard@e,
+  o/.store in = \keyboard@o,
+  s/.store in = \keyboard@s,
+  n/.store in = \keyboard@n,
+  r/.store in = \keyboard@r,
+  t/.store in = \keyboard@t,
+  d/.store in = \keyboard@d,
+  y/.store in = \keyboard@y,
+  miiir/.store in = \keyboard@miiir,
+  tab/.store in = \keyboard@tab,
+  x/.store in = \keyboard@x,
+  v/.store in = \keyboard@v,
+  l/.store in = \keyboard@l,
+  c/.store in = \keyboard@c,
+  w/.store in = \keyboard@w,
+  k/.store in = \keyboard@k,
+  h/.store in = \keyboard@h,
+  g/.store in = \keyboard@g,
+  f/.store in = \keyboard@f,
+  q/.store in = \keyboard@q,
+  sz/.store in = \keyboard@sz,
+  tiii/.store in = \keyboard@tiii,
+  enter/.store in = \keyboard@enter,
+  ti/.store in = \keyboard@ti,
+  ni/.store in = \keyboard@ni,
+  nii/.store in = \keyboard@nii,
+  niii/.store in = \keyboard@niii,
+  niv/.store in = \keyboard@niv,
+  nv/.store in = \keyboard@nv,
+  nvi/.store in = \keyboard@nvi,
+  nvii/.store in = \keyboard@nvii,
+  nviii/.store in = \keyboard@nviii,
+  nix/.store in = \keyboard@nix,
+  zero/.store in = \keyboard@zero,
+  dash/.store in = \keyboard@dash,
+  tii/.store in = \keyboard@tii,
+  del/.store in = \keyboard@del
+}
+
+\pgfkeys{
+  /keyboard/.cd,
+  basesize = 0.175cm, % the size of a single quadratic key
+  color = black,
+  fillcolor = black!10,
+  drawcolor = black,
+  strgl={},
+  osl={},
+  altl={},
+  space={},
+  altr={},
+  osr={},
+  menu={},
+  strgr={},
+  miil={},
+  mivl={},
+  ue={},
+  oe={},
+  ae={},
+  p={},
+  z={},
+  b={},
+  m={},
+  comma={},
+  dot={},
+  j={},
+  miir={},
+  miiil={},
+  u={},
+  i={},
+  a={},
+  e={},
+  o={},
+  s={},
+  n={},
+  r={},
+  t={},
+  d={},
+  y={},
+  miiir={},
+  tab={},
+  x={},
+  v={},
+  l={},
+  c={},
+  w={},
+  k={},
+  h={},
+  g={},
+  f={},
+  q={},
+  sz={},
+  tiii={},
+  enter={},
+  ti={},
+  ni={},
+  nii={},
+  niii={},
+  niv={},
+  nv={},
+  nvi={},
+  nvii={},
+  nviii={},
+  nix={},
+  zero={},
+  dash={},
+  tii={},
+  del={}
+}
+
+
+\newcommand*{\keyboard@key}[5]{
+\draw (#1*\keyboard@bs,#2*\keyboard@bs)
+  node[draw, minimum width=#3*\keyboard@bs, minimum height=#4*\keyboard@bs, rectangle, color=\keyboard@color, fill=\keyboard@fillcolor, thick] {}
+  node[anchor=base, color=\keyboard@color, yshift=-0.7*\keyboard@bs] {#5}
+  ;
+}
+
+\newcommand{\keyboard@nkey}[3]{\keyboard@key{#1}{#2}{4}{4}{#3}}
+
+\newcommand{\keyboard@ekey}[1]{%
+\filldraw[color=\keyboard@color, fill=\keyboard@fillcolor, thick]
+ (54*\keyboard@bs,16*\keyboard@bs) --
+ (60*\keyboard@bs,16*\keyboard@bs) --
+ (60*\keyboard@bs,8*\keyboard@bs) --
+ (55*\keyboard@bs,8*\keyboard@bs) --
+ (55*\keyboard@bs,12*\keyboard@bs) --
+ (54*\keyboard@bs,12*\keyboard@bs) --
+ cycle node[anchor=base, color=\keyboard@color, xshift=3.5*\keyboard@bs, yshift=-0.5*\keyboard@bs] {#1} ;
+}
+
+\newcommand*{\keyboard@apply}{%
+\begin{tikzpicture}
+
+\keyboard@key{3}{2}{6}{4}{\keyboard@strgl}
+\keyboard@key{8}{2}{4}{4}{\keyboard@osl}
+\keyboard@key{13}{2}{6}{4}{\keyboard@altl}
+\keyboard@key{27}{2}{22}{4}{\keyboard@space}
+
+\keyboard@key{41}{2}{6}{4}{\keyboard@altr}
+\keyboard@key{47}{2}{6}{4}{\keyboard@osr}
+\keyboard@key{53}{2}{6}{4}{\keyboard@menu}
+\keyboard@key{57.5}{2}{5}{4}{\keyboard@strgr}
+
+\keyboard@key{2.5}{6}{5}{4}{\keyboard@miil}
+\keyboard@nkey{7}{6}{\keyboard@mivl}
+\keyboard@nkey{11}{6}{\keyboard@ue}
+\keyboard@nkey{15}{6}{\keyboard@oe}
+\keyboard@nkey{19}{6}{\keyboard@ae}
+\keyboard@nkey{23}{6}{\keyboard@p}
+\keyboard@nkey{27}{6}{\keyboard@z}
+\keyboard@nkey{31}{6}{\keyboard@b}
+\keyboard@nkey{35}{6}{\keyboard@m}
+\keyboard@nkey{39}{6}{\keyboard@comma}
+\keyboard@nkey{43}{6}{\keyboard@dot}
+\keyboard@nkey{47}{6}{\keyboard@j}
+\keyboard@key{54.5}{6}{11}{4}{\keyboard@miir}
+
+\keyboard@key{3.5}{10}{7}{4}{\keyboard@miiil}
+\keyboard@nkey{9}{10}{\keyboard@u}
+\keyboard@nkey{13}{10}{\keyboard@i}
+\keyboard@nkey{17}{10}{\keyboard@a}
+\keyboard@nkey{21}{10}{\keyboard@e}
+\keyboard@nkey{25}{10}{\keyboard@o}
+\keyboard@nkey{29}{10}{\keyboard@s}
+\keyboard@nkey{33}{10}{\keyboard@n}
+\keyboard@nkey{37}{10}{\keyboard@r}
+\keyboard@nkey{41}{10}{\keyboard@t}
+\keyboard@nkey{45}{10}{\keyboard@d}
+\keyboard@nkey{49}{10}{\keyboard@y}
+\keyboard@nkey{53}{10}{\keyboard@miiir}
+\keyboard@ekey{\keyboard@enter}
+
+\keyboard@key{3}{14}{6}{4}{\keyboard@tab}
+\keyboard@nkey{8}{14}{\keyboard@x}
+\keyboard@nkey{12}{14}{\keyboard@v}
+\keyboard@nkey{16}{14}{\keyboard@l}
+\keyboard@nkey{20}{14}{\keyboard@c}
+\keyboard@nkey{24}{14}{\keyboard@w}
+\keyboard@nkey{28}{14}{\keyboard@k}
+\keyboard@nkey{32}{14}{\keyboard@h}
+\keyboard@nkey{36}{14}{\keyboard@g}
+\keyboard@nkey{40}{14}{\keyboard@f}
+\keyboard@nkey{44}{14}{\keyboard@q}
+\keyboard@nkey{48}{14}{\keyboard@sz}
+\keyboard@nkey{52}{14}{\keyboard@tiii}
+
+\keyboard@nkey{2}{18}{\keyboard@ti}
+\keyboard@nkey{6}{18}{\keyboard@ni}
+\keyboard@nkey{10}{18}{\keyboard@nii}
+\keyboard@nkey{14}{18}{\keyboard@niii}
+\keyboard@nkey{18}{18}{\keyboard@niv}
+\keyboard@nkey{22}{18}{\keyboard@nv}
+\keyboard@nkey{26}{18}{\keyboard@nvi}
+\keyboard@nkey{30}{18}{\keyboard@nvii}
+\keyboard@nkey{34}{18}{\keyboard@nviii}
+\keyboard@nkey{38}{18}{\keyboard@nix}
+\keyboard@nkey{42}{18}{\keyboard@zero}
+\keyboard@nkey{46}{18}{\keyboard@dash}
+\keyboard@nkey{50}{18}{\keyboard@tii}
+\keyboard@key{56}{18}{8}{4}{\keyboard@del}
+
+\end{tikzpicture}
+}
+
+
+\newcommand*{\drawkeyboard}[1]{%
+  \pgfqkeys{/keyboard}{#1}
+  \keyboard@apply
+}
+
+%% 
+%%
+%% End of file `keyboard.sty'.

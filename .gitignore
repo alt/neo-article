@@ -15,5 +15,6 @@
 \#*
 auto/
 
-# Ignore all final documents (but grasp PDF images):
-neo+xelatex.pdf
+# Ignore all final documents (but grasp unique PDF images):
+ebene*.pdf
+neo*.pdf
