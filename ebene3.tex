@@ -7,6 +7,7 @@
 \begin{document}
 \begin{preview}
 \fontspec{DejaVu Sans Mono}
+\newcommand{\amod}[1]{\textcolor{black!30}{\underline{\textbf{#1}}}}% a pressed modifier
 \drawkeyboard{
   basesize = 0.18cm,
   textscale = 1.1,
@@ -38,7 +39,7 @@
   dot={'},
   j={;},
   miir=M2,
-  miiil=M3,
+  miiil=\amod{M3},
   u=\textbackslash,
   i=/,
   a={\{},
@@ -50,7 +51,7 @@
   t={-},
   d={:},
   y=@,
-  miiir=M3,
+  miiir=\amod{M3},
   tab=Tab,
   x=\ldots,
   v=\_,
