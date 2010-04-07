@@ -44,6 +44,11 @@ xspace
   author = {ristome Layout},
   note = {\url{http://ristome.de}}
 }
+@Misc{unicode-math,
+  author = {{Will Robertson, Khaled Hosny}},
+  title = {unicode-math package},
+  note = {\url{http://github.com/khaledhosny/unicode-math}}
+}
 \end{filecontents}
 
 \newcommand{\taste}[1]{\makebox{\textsf{#1}}}
@@ -78,66 +83,66 @@ Schon im Jahre 1932 hat August Dvorak die ungeschickte Belegung als solche erkan
 \subsection{\neoio und 1.1}
 Im Jahre 2004 hat Hanno Behrens eine weitere ergonomische Tastatur entwickelt, die er Neo nannte. Etwa ein Jahr später kam mit \neoioi eine Verbesserung und teilweise Erweiterung des Layouts auf, z.\,B. wurde eine zweite \taste{Alt Gr}-Taste auf der linken Hand eingeführt, um den Zugriff auf Sonderzeichen zu vereinfachen – ein großer Schritt in Richtung Ergonomie beim Programmieren, man denke etwa an die schwere Erreichbarkeit des |{|.
 \section{Gegenwart}
-Seit dieser Zeit wird \neoii entwickelt, dessen Referenz Ende März eingefroren wurde und das somit stabil ist. \cite{neo2} Gegenüber der ersten Version wurden viele grundlegende Änderungen vorgenommen, wobei die Belegung der Buchstaben zu großen Teilen gleich blieb. Die Abbildung zeigt die aktuelle Belegung. Diese weist nach langen Tests im alltäglichen Umgang vieler Entwickler sowie durch umfangreiche Diskussionen eine optimierte Verteilung der Buchstaben auf.
+Seit dieser Zeit wird \neoii entwickelt, dessen Referenz Ende März eingefroren wurde und das somit stabil ist. \cite{neo2} Gegenüber der ersten Version wurden viele grundlegende Änderungen vorgenommen, wobei die Positionen der Buchstaben aber zu großen Teilen gleich blieb. Die Abbildungen zeigen die aktuelle Belegung. Diese weist eine Verteilung der Buchstaben auf, die nach langem Testen im alltäglichen Umgang durch vieler Entwickler und Nutzer, sowie durch umfangreiche Diskussionen optimiert wurde.
 \newpage
 \begin{center}
 \includegraphics[width=.7\textwidth]{ebene12}
-\captionof{figure}{\neoii – erste und zweite Ebene, Buchstaben und Spezialzeichen. (Großbuchstaben zur Übersicht nicht dargestellt.) \newline \textsf{M1}\,–\,\textsf{M3} stehen für die „Modifier“, vergleichbar \textsf{Shift} (\textsf{M2}) und \textsf{Alt Gr}~(\textsf{M3}). \textsf{T1}\,–\,\textsf{T3} sind tote Tasten, die eine Vielzahl an Diakritika bieten – zur Übersicht sind nicht die einzelnen Zeichen dargestellt.}
+\captionof{figure}{Buchstaben und Spezialzeichen der ersten und zweiten Ebene. \newline \textsf{M2}\,–\,\textsf{M4} bezeichnen die „Modifier“, \textsf{T1}\,–\,\textsf{T3} sind tote Tasten, die eine Vielzahl an Diakritika bieten. Zur Übersicht sind diese nicht dargestellt.}
 \end{center}
-Hauptänderung in Version 2.0 war jedoch die Einführung von „höheren Ebenen“ der Tastatur,\footnote{Nur in der Software! Neo ist für deutsche Standardtastaturen entwickelt, s.\,u.} insgesamt ist jede Taste sechsfach belegt: Auf Ebene~1 Kleinbuchstaben und Satzzeichen. (\taste{abc.,}) Diese werden durch einfachen Druck auf die Taste erzeugt. Auf der Ebene~2 sind alle Zeichen, die durch Drücken von Shift (oder „Umschalt“) erzeugt werden: Großbuchstaben \taste{A}, wenige Sonderzeichen \taste{§} und Zeichen wie \taste{»« „“}, die für typographisch korrektes Schreiben (statt \taste{"}) verwendet werden. Ebene~3 wird durch \taste{Alt Gr} verwendet, in dieser Ebene sind Sonderzeichen, die zum Programmieren verwendet werden wie |()\/{}_[ ]^!<>|. Um klare Bezeichnungen zu erreichen, wurde \taste{Alt Gr} bei \neoii in \taste{Mod 3} umbenannt.
+Hauptänderung in Version 2.0 war die Einführung von „höheren Ebenen“ der Tastatur, insgesamt ist jede Taste sechsfach belegt.\footnote{Nur in der Software! Neo ist für deutsche Standardtastaturen entwickelt, s.\,u.} Auf Ebene~1 liegen Kleinbuchstaben, Zahlen und Satzzeichen. (\taste{abc.,}) Diese werden durch einfachen Druck auf die entsprechende Taste erzeugt. Ebene~2 besteht aus Zeichen, die durch gleichzeitiges Drücken von Shift (oder „Umschalt“) erzeugt werden: Großbuchstaben \taste{A}, wenige Sonderzeichen \taste{§} und Zeichen wie \taste{»« „“}, die für typographisch korrektes Schreiben (statt \taste{"}) verwendet werden. Ebene~3 wird durch \taste{Alt Gr} verwendet, in dieser Ebene sind Sonderzeichen, die zum Programmieren verwendet werden wie |()\/{}_[ ]^!<>|. Zur Klarheit wurden \taste{Shift} und \taste{Alt Gr} in \taste{Mod 2} bzw. \taste{Mod 3} umbenannt, was für „Modifikatior“ steht und die Ebene angibt, die man durch Drücken erreicht. Man beachte, dass es \taste{Mod 3} zweimal, symmetrisch, vorhanden ist.
 
-Diese Funktionalität bieten fast alle Tastaturlayouts in ähnlicher Form. Neo bietet neben dem Modifikator für Ebene~3 noch einen für eine weitere Ebene, konsequent benannt Mod~4. Diese bietet wenige weitere Zeichen in gewohnter Form, vor allem aber als völlig neues Konzept Steuerzeichen, die normalerweise weit außerhalb des Tastenfeldes liegen, wie die Pfeiltasten für Navigation im Text, Enter, Löschen, Tabulator, Entfernen, Pos1, Ende, Einfügen, Bild hoch und Bild runter. Diese sind alle auf der linken Hälfte der Tastatur, so dass mit der rechten Hand \taste{Mod 4} gedrückt und dann bequem am Text gearbeitet werden kann.
+Diese Funktionalität bieten fast alle Tastaturlayouts in ähnlicher Form. Neo bietet neben dem Modifikator für Ebene~3 aber noch einen weiteren, konsequent benannt als \taste{Mod 4}, mit der die vierte Ebene erreicht wird. Auf dieser sind wenige weitere Zeichen, vor allem aber Steuerzeichen. Mit diesem neuen Konzept können Befehlstasten, die normalerweise weit außerhalb des Tastenfeldes liegen, sehr leicht erreicht werden. Vorhanden sind die Pfeiltasten für Navigation im Text, Enter, Löschen, Tabulator, Entfernen, Pos1, Ende, Einfügen, Bild hoch und Bild runter. Diese sind alle auf der linken Hälfte der Tastatur, so dass mit der rechten Hand \taste{Mod 4} gedrückt und dann bequem am Text gearbeitet werden kann.
 
-Bei einer normalen Tastatur muss die rechte Hand einen Weg von bis zu 5cm zurücklegen, bis die Pfeiltasten erreicht sind; der Weg zu Bild hoch ist meist noch länger und oft muss man auf die Tastatur sehen, um die Taste schnell zu finden. Das alles stört aber den Schreibfluss\footnote{Natürlich sollte man selten Entfernen/Löschen drücken – aber jeder macht Fehler, und die Navigation ist immer nötig.} und belastet die Arme durch die ständige weite Bewegung.
+Um die Pfeiltasten auf einer normalen Tastatur zu erreichen, muss die rechte Hand einen Weg von bis zu 5cm zurücklegen; der Weg zu Bild hoch ist meist noch länger und oft muss man auf die Tastatur sehen, um die Taste schnell zu finden. Das alles stört aber den Schreibfluss\footnote{Natürlich sollte man selten Entfernen/Löschen drücken – aber jeder macht Fehler, und die Navigation ist immer nötig.} und belastet die Arme durch die ständige weite Bewegung.
 
-Auf der rechten Tastaturhälfte findet sich auf der vierten Ebene eine Wiederholung des Ziffernblockes – alle Zahlen und Rechenzeichen sind somit in der Grundhaltung der Hand verfügbar und man muss weder die obere Zahlenreihe noch den „weit entfernten“ Zahlenblock verwenden. Zum Markieren kann wie gewohnt zusätzlich Shift gedrückt werden. Falls man viele Zahlen hintereinander eingeben muss oder sehr viel im Text (z.\,B. in einer pdf-Datei) navigieren muss, ohne zu schreiben, ist die Lock-Funktion nützlich, die analog zu Caps Lock funktioniert: Drücken beider \taste{Mod 4}-Tasten gleichzeitig lässt die Funktion einrasten und man muss nicht ständig den Finger auf der Taste lassen.
+Auf der rechten Tastaturhälfte findet sich auf der vierten Ebene ein Ziffernblock – alle Zahlen und Rechenzeichen sind in der Grundhaltung der Hand verfügbar und man muss weder die obere Zahlenreihe noch den „weit entfernten“ Zahlenblock verwenden. Zum Markieren kann wie gewohnt zusätzlich Shift gedrückt werden. Falls man viele Zahlen hintereinander eingeben muss oder sehr viel im Text (z.\,B. in einer pdf-Datei) navigieren muss, ohne zu schreiben, ist die Lock-Funktion nützlich, die analog zu Caps Lock funktioniert: Drücken beider \taste{Mod 4}-Tasten gleichzeitig lässt die Funktion einrasten und man muss nicht ständig den Finger auf der Taste lassen.
 
 \begin{center}
 \leavevmode\kern-.01\textwidth%
-\includegraphics[width=.52\textwidth]{ebene3}\kern-.2em%
-\includegraphics[width=.52\textwidth]{ebene4}
-\captionof{figure}{Ebene 3: Programmierzeichen, Ebene 4: Navigation, Zahlen}
+\includegraphics[width=.51\textwidth]{ebene3}
+\includegraphics[width=.51\textwidth]{ebene4}
+\captionof{figure}{Ebene 3: Programmierzeichen, Ebene 4: Zahlen, Navigation (durch Pfeile angedeutet) Jeweils einer der hervorgehobenen \taste{Mod} muss gedrückt werden.}
 \end{center}
 
 Damit ist die Vielfalt von Neo noch nicht erschöpft: Für kurze griechische Wörter in einem deutschen Text, vor allem aber für Formelvariablen gibt es die fünfte Ebene, die durch gleichzeitiges Drücken von \taste{Shift}, \taste{Mod 3} und z.\,B. \taste{a} bedient wird\footnote{Man gewöhnt sich schnell an diese Kombinationen, ohne die Finger zu verrenken.} – es resultiert ein \taste{$\alpha$}. Das klingt nicht sehr ergonomisch, ist aber immer noch einfacher, als auf ein ganz anderes Layout umzustellen, nur für ein paar Zeichen; für griechischen Fließtext ist natürlich ein rein griechisches Layout zu bevorzugen. Neben den griechischen Kleinbuchstaben (die mit allen nötigen Akzenten versehen werden können!) sind noch wenige andere Zeichen auf dieser Ebene.
 
 \begin{center}
 \leavevmode\kern-.01\textwidth%
-\includegraphics[width=.52\textwidth]{ebene5}\kern-.2em%
-\includegraphics[width=.52\textwidth]{ebene6}
+\includegraphics[width=.51\textwidth]{ebene5}
+\includegraphics[width=.51\textwidth]{ebene6}
 \captionof{figure}{Ebene 5: Griechisch, Ebene 6: Mathematik}
 \end{center}
 
-Schließlich bietet die Ebene~6, zu erreichen über gleichzeitiges Drücken von \taste{Mod 3} und \taste{Mod 4}, noch eine weitere Vielfalt an Sonderzeichen, vor allem mathematischen Symbolen und einigen griechischen Großbuchstaben. Eine weitere große Zahl mathematischer Zeichen bietet der Nummernblock, der ebenfalls in 6 Ebenen belegt ist und zur Übersicht hier nicht dargestellt wurde.
+Schließlich bietet die Ebene~6, zu erreichen über gleichzeitiges Drücken von \taste{Mod 3} und \taste{Mod 4}\footnote{Man könnte hier \taste{Mod 2} plus \taste{Mod 4} erwarten, aber diese Kombination wird zum Markieren von Text benötigt. (Pfeiltaste + Shift = Markieren)}, noch eine weitere Vielfalt an Sonderzeichen, vor allem mathematischen Symbolen und einigen griechischen Großbuchstaben.
 
-Nach dem gleichen Ebenensystem ist der Nummernblock belegt, der außer den Zahlen (erste Ebene) und den Steuerzeichen (vierte Ebene, redundant zu denen auf der vierten Ebene linke Hand) seltenere mathematische Relationen und Symbole enthält.
+Eine weitere große Zahl mathematischer und sonstiger spezieller Zeichen bietet der Nummernblock, der ebenfalls in 6~Ebenen belegt ist; aus Platzgründen wurde hier nur das Haupttastenfeld dargestellt.
 
-\subsection{Anordnung der Tasten}
-Wie kann man sich denn nun all diese Tasten merken? Oft fällt es schon schwer, sich alle normalen Tasten zu merken, aber dann gleich 6 Zeichen pro Taste?
+\subsection{Wie soll ich mir das alles merken?}
+Oft fällt es schon schwer, sich alle normalen Tasten zu merken, vor allem, wenn man eine neue Belegung lernt. Aber dann gleich 6 Zeichen pro Taste?
 
 Hier hilft die sinngemäße Anordnung: Die Taste |a| hat die Zeichen |a A| sowie |{| \includegraphics{neo1}. Vier davon kann man sich phonetisch oder der Glyphe nach merken. Auf den Formel-Ebenen wurde darauf geachtet, dass die Formelzeichen mnemonisch mit der Buchstabentaste in Bezug stehen.  Die Sonderzeichenebene ordnet die Zeichen nach Sinngruppen; so ist etwa jedes der Zeichenpaare |()<>{}[]›‹‚‘| jeweils mit Zeige- und Mittelfinger einer Hand in der gleichen Tastenreihe einzugeben.  Die Steuerungsebene schließlich enthält Cursor- und Ziffernblock in der gewohnten Anordnung, nur eben in der Grundstellung der beiden Hände. (Mit Erweiterungen: links neben der linken Pfeiltaste ist \taste{Pos 1}, also „ganz links“, oberhalb dieser Taste ist \taste{Bild hoch}, also „ganz hoch“ etc.)
 
 Allgemein wird versucht, das Layout so zu gestalten, dass es sehr intuitiv verwendet werden kann und man kein „Raketentechniker“ sein muss, um es zu verstehen\footnote{Das Keyboarddesign „Space Cadett“ hatte dieses Problem, aber auf Hardwareseite.} – Neo soll auch im Alltag bestehen können.
 
-Dank der großen Zeichenvielfalt im Unicode reichen aber die sechs Tastaturebenen nicht aus, um alle mehr oder weniger häufig gebrauchten Zeichen abzudecken. Daher gibt es weiterhin die unter Linux und Solaris bereits übliche Compose-Taste: Drückt man \taste{Mod 3} und \taste{Tab}, danach (zwei oder drei) weitere Tasten, so werden diese sinngemäß „kombiniert“ und ergeben ein neues Zeichen. Die Eingabefolge \taste{Compose a e} ergibt das Zeichen \taste{æ}, die Folge \taste{Compose :)} ergibt das Unicode-Zeichen für ein Smiley. Das klingt wiederum sehr kompliziert und unergonomisch, doch wenn man das Zeichen oft benötigt, lohnt es sich, einmal in der Liste nachzusehen, wie es erzeugt wird und es dann stets direkt eingeben zu können, statt in einem Formeleditor o.\,ä. nachzuschlagen.
+Dank der großen Zeichenvielfalt im Unicode reichen aber die sechs Tastaturebenen nicht aus, um alle mehr oder weniger häufig gebrauchten Zeichen abzudecken. Daher gibt es weiterhin die unter Linux und Solaris bereits übliche Compose-Taste: Drückt man \taste{Mod 3} und \taste{Tab}, danach (zwei oder drei) weitere Tasten, so werden diese sinngemäß „kombiniert“ und ergeben ein neues Zeichen. Die Eingabefolge \taste{Compose a e} ergibt das Zeichen \taste{æ}, die Folge \taste{Compose : )} ergibt das Unicode-Zeichen für ein Smiley. Das klingt wiederum sehr kompliziert und unergonomisch, doch wenn man das Zeichen oft benötigt, lohnt es sich, einmal in der Liste nachzusehen, wie es erzeugt wird und es dann stets direkt eingeben zu können, statt in einem Formeleditor o.\,ä. zu klicken – auch ein \LaTeX-Befehl ist meist umständlicher einzugeben.
 
-\subsection{Neo ist keine Tastatur \dots{}}
-\dots{}\,sondern eine Tastaturbelegung. Neo orientiert sich an den Tasten einer handelsüblichen deutschen Tastatur, wie in den Abbildungen angedeutet. Man muss lediglich einen Treiber installieren, der auf der Homepage verfügbar ist und was meist nur ein oder zwei Klicks erfordert. Zur Zeit gibt es Treiber für Windows, Linux und Mac OS X.\footnote{Wegen Softwareproblemen sind in Mac OS X momentan die 5. und 6. Ebene über andere Tastenkombinationen und die 4. gar nicht verfügbar.}
+\subsection{Wie bekomme ich Neo?}
+Neo ist keine Tastatur, sondern eine Tastatur\emph{belegung}. Neo orientiert sich an den Tasten einer handelsüblichen deutschen Tastatur, wie in den Abbildungen angedeutet. Man muss lediglich einen Treiber installieren, der auf der Homepage verfügbar ist und was meist nur ein oder zwei Klicks erfordert. Zur Zeit gibt es Treiber für Windows, Linux und Mac OS X.\footnote{Wegen Softwareproblemen sind in Mac OS X momentan die 5. und 6. Ebene über andere Tastenkombinationen und die 4. gar nicht verfügbar.} Unter Windows besteht der Treiber aus einer einzelnen ausführbaren Datei, die man sich immer auf USB-Stick mitnehmen kann, sodass Neo auch an fremden Rechnern jederzeit verfügbar ist. Bei vielen Linux-Distributionen kann Neo schon als definiertes Layout gewählt werden.
 
 Optimale Ergebnisse erhält man natürlich durch die Kombination einer ergonomischen Belegung und einer ergonomisch geformten Tastatur, z.\,B. Matrixtastaturen (PLUM) oder Konzepten wie DataHand. \cite{plum,datahand}
 
 \section{Neo, Unicode und \XeLaTeX}
-Der \TeX-Nutzer wird sich nun fragen, was das mit ihm zu tun hat: Die ganzen Zeichen kann man auch als \TeX-Befehle über ASCII eingeben, man braucht weder Unicode noch \XeTeX\ und vor allem kein Neo. Das stimmt auch prinzipiell. Aber damit wird der Quellcode ziemlich unleserlich. Wer ein |\"a| schöner findet als ein |ä| im Quellcode, muss diesen Artikel eigentlich nicht weiterlesen. Deutlich wird die bessere Lesbarkeit vor allem im Formelsatz, der meist nur schlecht auf einen Blick zu erfassen ist. Man vergleiche die beiden folgenden Eingaben:\\ \\
-\verb1 a) \[\int_{-\infty}^\infty d\Omega \left\|\sqrt{\frac{3}{8\pi}}1
-\verb1                         \sin\theta e^{i\phi}\right\|^2 \geq 0\]1
+Der \TeX-Nutzer wird sich nun fragen, was das mit ihm zu tun hat: Die ganzen Zeichen kann man auch als \TeX-Befehle über ASCII eingeben, man braucht weder Unicode noch \XeTeX\ und vor allem kein Neo. Das stimmt auch prinzipiell, allerdings wird der Quellcode so ziemlich unleserlich. Wer ein |\"a| schöner findet als ein |ä| im Dokument, zählt nicht direkt zur Zielgruppe dieses Artikels. Deutlich wird die bessere Lesbarkeit vor allem im Formelsatz, der meist nur schlecht auf einen Blick zu erfassen ist. Man vergleiche die beiden folgenden Eingaben:\\ \\
+\verb1 a) \int_{-\infty}^\infty d\Omega \left\|\sqrt{\frac{3}{8\pi}}1
+\verb1                         \sin\theta e^{i\phi}\right\|^2 \geq 01
 \verb| b)| \raisebox{-.8ex}{\includegraphics{neo2}}
 
 Mit wenigen kurzen Definitionen erhält man jeweils das gleiche Resultat:
-\[\int_{-\infty}^\infty d\Omega \left\|\sqrt{\frac{3}{8\pi}} \sin\theta e^{i\phi}\right\|^2 \geq 0\]
+\[\textstyle \int_{-\infty}^\infty d\Omega \left\|\sqrt{\frac{3}{8\pi}} \sin\theta e^{i\phi}\right\|^2 \geq 0\]
 
-Zur Zeit muss man noch manuell definieren, dass \raisebox{-.8ex}{\includegraphics{neo3}} wie |\int, \geq| behandelt werden, aber das (noch) experimentelle Paket \Package{unicode-math} von Will Robertson wird hier Abhilfe schaffen und den direkten Umgang mit unicode-kodierten otf-Matheschriften ermöglichen.
+Zur Zeit muss man noch manuell definieren, dass \raisebox{-.8ex}{\includegraphics{neo3}} wie |\int, \geq| behandelt werden, aber das (noch) experimentelle Paket \Package{unicode-math}\footnote{Von Will Robertson mit Weiterentwicklung für \LuaTeX von Khaled Hosny. \cite{unicode-math}} wird hier Abhilfe schaffen und den direkten Umgang mit unicode-kodierten otf-Matheschriften ermöglichen.
 
-Auch für typographisch korrekte Zeichen beim normalen Schreiben bietet Neo – in Kombination mit einem unicodefähigen \TeX-System wie \XeLaTeX, \LuaLaTeX\ oder \ConTeXt\ – die Vorteile der direkten Eingabe. Man muss nicht mehr |--| schreiben, um den Halbgeviertstrich oder Gedankenstrich „–“ zu erhalten, sondern kann ihn einfach eingeben (Ebene~2), ebenso der Geviertstrich oder englische Gedankenstrich (Ebene~3) „—“ statt |---|. Auch Anführungszeichen, die man mit \Package{babel} |"` "'| schreiben muss (was der Autor sich noch nie merken konnte \dots{}), bietet Neo als Zeichen, sowie englische Anführungszeichen und Guillemets: „ “ “ ”  » «. Die Auslassungspunkte, typographisch korrekt mit |\dots| statt |...| geschrieben, sind ebenso vorhanden: …
+Auch für typographisch korrekte Zeichen beim normalen Schreiben bietet Neo – in Kombination mit einem unicodefähigen \TeX-System wie \XeLaTeX, \LuaLaTeX\ oder \ConTeXt\ – die Vorteile der direkten Eingabe. Man muss nicht mehr |--| schreiben, um den Halbgeviertstrich oder Gedankenstrich „–“ zu erhalten, sondern kann ihn einfach eingeben (Ebene~2), ebenso der Geviertstrich oder englische Gedankenstrich (Ebene~3) „—“ statt |---|. Auch Anführungszeichen, die man mit \Package{babel} |"` "'| schreiben muss (was der Autor sich noch nie merken konnte \dots{}), bietet Neo als Zeichen, sowie englische Anführungszeichen und Guillemets: „ “ “ ”  » «. Die Auslassungspunkte, typographisch korrekt mit |\dots| geschrieben, sind ebenso vorhanden: … Mit pdf\TeX\ sind manche dieser Zeichen nutzbar, je nach verwendeter Schrift, allerdings nur mit |utf8|-Kodierung.
 
 Definiert man sich den Aufzählungspunkt |•| oder das Zeichen |¹| als den Befehl |\item|, kann man die üblichen \LaTeX-Umgebungen etwas „ungewohnt“, aber vielleicht übersichtlicher und einfacher schreiben:
 
@@ -174,7 +179,7 @@ Dank der vielen „toten Tasten“, also diakritischen Zeichen, ist jeder Buchst
 \section{Ausblick}
 Nicht nur durch die Ergonomie, die jedes Schreiben am Rechner angenehmer macht, sondern auch durch die große Anzahl an leicht erreichbaren Sonderzeichen kann \neoii die Arbeit mit modernen \TeX-Varianten also sehr viel einfacher machen und erleichtert die Lesbarkeit fremden Codes. Damit ist endlich die Zeit von active characters für Standardeingaben vorbei, und die \TeX-Welt ist in der Zeit moderner Kodierungen angekommen.
 
-Doch damit ist die Entwicklung von Neo noch nicht abgeschlossen. Ähnlich wie das \LaTeX3-Projekt gab es schon während der Endphase von \neoii Bestrebungen, die Konzepte nochmals von Grund auf zu überarbeiten und eine Belegung zu entwickeln, die sich auch nach ergonomischer Hardware richtet und daher mehr ein „ganzheitliches“ Konzept darstellt. Diese Entwicklung wird allerdings noch einige Jahre in Anspruch nehmen und soll niemanden davon abhalten, \neoii zu erlernen.
+Doch damit ist die Entwicklung von Neo noch nicht abgeschlossen. Ähnlich wie das \LaTeX3-Projekt gab es schon während der Endphase von \neoii Bestrebungen, die Konzepte nochmals von Grund auf zu überarbeiten und eine Belegung zu entwickeln, die sich auch nach ergonomischer Hardware richtet und daher mehr ein „ganzheitliches“ Konzept darstellt. Diese Entwicklung wird allerdings noch einige Jahre in Anspruch nehmen und soll niemanden davon abhalten, \neoii zu erlernen – der Umstieg lohnt in jedem Fall!
 
 \bibliography{\jobname}
 \end{document}

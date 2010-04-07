@@ -9,6 +9,10 @@ The main author is [Arno Trautmann](http://github.com/alt/neo-article).
 
 ## How to Compile
 
-At first, one has to compile the various images (‌‌`neo*.tex`, `ebene*.tex`) with XeTeX: `xelatex neo12.tex‌`, …
+To compile all the images, use the makefile:
 
-After that, the article itself can be compiled with `pdflatex neo+xelatex.tex` – and if you also want to get the bibliography, you must complement ‌‌‌`bibtex neo+xelatex.aux` and recompile the article `pdflatex neo+xelatex.tex`.
+LaTeX --shell-escape makefile
+
+Shell-escape needed here! (or compile all of the neo*.tex, ebene*.tex by hand)
+
+After that, the article can be compiled with `pdflatex neo+xelatex.tex`. For bibliography, you must complement ‌‌‌`bibtex neo+xelatex` and recompile the article `pdflatex neo+xelatex.tex`. (bib will be generated automatically in the first neo+xelatex run.)

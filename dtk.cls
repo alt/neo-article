@@ -169,7 +169,7 @@
     \RequirePackage{lmodern}
   \fi
 \fi
-\RequirePackage[scaled=0.83]{luximono}
+%\RequirePackage[scaled=0.83]{luximono}
 \RequirePackage[full]{textcomp}
 \ifDTK@Author@\else\RequirePackage[utf8]{inputenc}\fi
 \usepackage{fixltx2e}
