@@ -1,89 +1,36 @@
 %%
 %% This is file `dtk.cls',
-%% generated with the docstrip utility.
 %%
-%% The original source files were:
-%%
-%% dtk.dtx  (with options: `class')
-%% 
-%% IMPORTANT NOTICE:
-%% 
-%% For the copyright see the source file.
-%% 
-%% Any modified versions of this file must be renamed
-%% with new filenames distinct from dtk.cls.
-%% 
-%% For distribution of the original source see the terms
-%% for copying and modification in the file dtk.dtx.
-%% 
-%% This generated file may be distributed as long as the
-%% original source files, as listed above, are part of the
-%% same distribution. (The sources need not necessarily be
-%% in the same archive or directory.)
-%%  Time-stamp: "dtk.dtx        2006-08-11 18:18:53 CET Mittwoch  RN/HjG/hv"
-%%
-%%^^A%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%^^A $Id: dtk.dtx,v 1.9b 2006/08/11 21:03:42 hv Exp hv $
-%%^^A%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Purpose:
-%%      LaTeX Class and Styles for ``Die TeXnische Komoedie''.
-%%
-%% Documentation:
-%%      The documentation  can be  generated  from  the original file
-%%      dtk.dtx with the doc style/package. LaTeX the file dtk.tex to
-%%      get the full documentation in DVI format.
-%%
-%%
-%% Author: Gerd Neugebauer
-%%         Mainzer Str. 8
-%%         56321 Rhens (Germany)
-%% Mail:   gene@gerd-neugebauer.de
+%% LaTeX Class for ``Die TeXnische Komoedie''.
 %%
 %% Copyright (C) 1995-1996 Gerd Neugebauer
-%% Copyright (C) 1997-2006 DANTE, Deutschsprachige
+%% Copyright (C) 1997-2010 DANTE, Deutschsprachige
 %%                           Anwendervereinigung TeX e.V.
 %%
-%%  dtk.dtx is distributed in the hope that it  will  be useful, but
-%%  WITHOUT  ANY  WARRANTY.    No   author  or  distributor  accepts
-%%  responsibility to anyone for the consequences of using it or for
-%%  whether it serves any particular purpose or works at all, unless
-%%  he says so in writing.
-%%
-%%  Everyone is granted permission to  copy, modify and redistribute
-%%  dtk.dtx,  provided  this copyright notice is preserved  and  any
-%%  modifications are indicated.
-%%
-%%
-%%  This class is still under development and may be replaced with a
-%%  new version which provides enhanced functionality.
-%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%  \CharacterTable
-%%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
-%%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
-%%   Digits        \0\1\2\3\4\5\6\7\8\9
-%%   Exclamation   \!     Double quote  \"     Hash (number) \#
-%%   Dollar        \$     Percent       \%     Ampersand     \&
-%%   Acute accent  \'     Left paren    \(     Right paren   \)
-%%   Asterisk      \*     Plus          \+     Comma         \,
-%%   Minus         \-     Point         \.     Solidus       \/
-%%   Colon         \:     Semicolon     \;     Less than     \<
-%%   Equals        \=     Greater than  \>     Question mark \?
-%%   Commercial at \@     Left bracket  \[     Backslash     \\
-%%   Right bracket \]     Circumflex    \^     Underscore    \_
-%%   Grave accent  \`     Left brace    \{     Vertical bar  \|
-%%   Right brace   \}     Tilde         \~}
-%%
-%%^^A%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\def\DTKrcs$#1: #2 #3${#2}
-\def\filename{dtk.dtx}
-\xdef\fileversion{\DTKrcs$Revision: 1.10 $}
-\xdef\filedate{\DTKrcs$Date: 2007/08/28 18:17:42 $}
-\let\docversion=\fileversion
-\let\docdate=\filedate
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3c
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3c or later is part of all distributions of LaTeX
+%% version 2005/12/01 or later.
+%
+\def\filename{dtk.cls}
+\def\fileversion{1.20}
+\def\filedate{2009/11/07}
+%
+\NeedsTeXFormat{LaTeX2e}[1995/12/01]
+\ProvidesClass{dtk}[\filedate~\fileversion 
+    dtk document class (gn,rn,hv)]
+\let\DTKversion=\fileversion
+\let\DTKdate=\filedate
 \newif\ifDTK@Author@
 \DTK@Author@true
 \newif\ifDTK@Draft@
+\newif\ifDTK@tgpagella@
+\newif\ifDTK@tgschola@
+\DTK@tgpagella@false
+\DTK@tgschola@false
 \newif\ifDTK@lineno@
 \DTK@lineno@false
 \newif\ifDTK@german@
@@ -138,6 +85,8 @@
 \DeclareOption{full}{\DTK@Author@false}
 \DeclareOption{omitgerman}{\DTK@german@false}
 \DeclareOption{ancient}{\def\DTK@layout{95}}
+\DeclareOption{tgpagella}{\DTK@tgpagella@true}
+\DeclareOption{tgschola}{\DTK@tgschola@true}
 \DeclareOption{draft}{%
   \DTK@Draft@true
   \DTK@lineno@true
@@ -182,6 +131,7 @@
 \DeclareOption{00}{\def\DTK@layout{00}}
 \DeclareOption{01}{\def\DTK@layout{01}}
 \DeclareOption{02}{\def\DTK@layout{02}}
+\DeclareOption{08}{\def\DTK@layout{08}}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
 \else
 \DeclareOption*{%
@@ -194,7 +144,7 @@
 \LoadClass{book}
 \ifDTK@lineno@
   \RequirePackage{lineno}\linenumbers
-  \RequirePackage{color}%
+  \RequirePackage{xcolor}%
   \linenumbersep=.8ex
   \def\linenumberfont{\normalfont\scriptsize\sffamily\bfseries}%
   \definecolor{DTK@lineno@color}{cmyk}{0.26,0,0.76,0}% SpringGreen
@@ -206,16 +156,31 @@
 \fi
 %%%%%%%%%%
 \RequirePackage[T1]{fontenc}
-\IfFileExists{lmodern.sty}{\RequirePackage{lmodern}}{}
-\RequirePackage[full]{textcomp}
-\ifDTK@Author@\else
-  \RequirePackage[utf8]{inputenc}
+\ifDTK@tgpagella@
+  \RequirePackage{mathpazo,tgpagella}
+\else
+  \ifDTK@tgschola@
+    \usepackage[charter,expert]{mathdesign}
+    \def\rmdefault{bch} % not scaled
+  \else
+%    \RequirePackage%[lucidascale]
+%	{lucidabr}
+%    \RequirePackage[scaled=1.0]{libertine}
+    \RequirePackage{lmodern}
+  \fi
 \fi
+\RequirePackage[scaled=0.83]{luximono}
+\RequirePackage[full]{textcomp}
+\ifDTK@Author@\else\RequirePackage[utf8]{inputenc}\fi
+\usepackage{fixltx2e}
 \usepackage[hyphens]{url}
+\def\URL#1{\protect\url{#1}}
 \usepackage[newcommands,newparameters]{ragged2e}
-\@ifundefined{flushleft}
-  {\let\flushleft\FlushLeft\let\endflushleft\endFlushLeft}{}
 \usepackage{filecontents}
+
+\RequirePackage{babel}
+\RequirePackage{tabularx}
+\iffalse
 \ifDTK@german@
 \RequirePackage{ngerman}
 \selectlanguage{ngerman}
@@ -225,9 +190,11 @@
 \typeout{*** Don't forget to use the macro \string\DTKgerman\space
   afterwards.}
 \fi
+\fi
+
 \RequirePackage{multicol}
 \ifDTK@Author@\else
-  \RequirePackage{graphicx,color}
+  \RequirePackage{graphicx,xcolor}
   \errorcontextlines=100\relax
 \fi
 \RequirePackage{dtklogos}
@@ -243,7 +210,7 @@
   \fi}
 \paperwidth  = 148.5mm
 \paperheight = 210mm
-\textheight = 471pt
+\textheight = 485pt           %%%%471pt
 \textwidth  = 333pt
 \oddsidemargin  = 0pt
 \evensidemargin = \oddsidemargin\oddsidemargin  -35.89157pt
@@ -252,7 +219,7 @@
 \headheight = 17pt
 \headsep    = 17pt
 \footskip = 24pt
-\parskip   = 0.5\baselineskip \advance\parskip by 0pt plus 2pt
+\parskip   = 0.3\baselineskip \advance\parskip by 0pt plus 2pt
 \parindent = 0pt
 \renewcommand\topfraction{.9}
 \renewcommand\bottomfraction{.9}
@@ -390,12 +357,6 @@
 \providecommand\Macro[1]{\texttt{#1}}
 \providecommand\Environment[1]{\texttt{#1}}
 \providecommand\Email[1]{\texttt{#1}}
-%% hv 2006-08-11
-\providecommand*{\nolinkurl}{\url}
-\providecommand*{\href}[1]{}
-\newcommand*{\CTANurl}[1]{%
-  \href{ftp://ftp.ctan.org/tex-archive/#1}{\nolinkurl{CTAN:#1}}%
-}
 \providecommand\Acronym[1]{\textsc{#1}}
 \def\@listI{%
   \leftmargin = \leftmargini
@@ -452,13 +413,13 @@
   }
 \newcommand\rolllabel[1]{\hspace\labelsep \textbf{#1}\hfill}
 \newenvironment{example}{\begin{quote}\small}{\end{quote}}
-\long\def\@caption#1[#2]#3{\par\addcontentsline{\csname
-  ext@#1\endcsname}{#1}{\protect\numberline{\csname
-  the#1\endcsname}{\ignorespaces #2}}\begingroup
-    \@parboxrestore
-    \small
-    \@makecaption{\csname fnum@#1\endcsname}{\ignorespaces #3}\par
-  \endgroup}
+%\long\def\@caption#1[#2]#3{\par\addcontentsline{\csname
+%  ext@#1\endcsname}{#1}{\protect\numberline{\csname
+%  the#1\endcsname}{\ignorespaces #2}}\begingroup
+%    \@parboxrestore
+%    \small
+%    \@makecaption{\csname fnum@#1\endcsname}{\ignorespaces #3}\par
+%  \endgroup}
 \setcounter{secnumdepth}{0}
 \newif\ifFirstArticle
 \FirstArticletrue
@@ -508,19 +469,13 @@
   \addcontentsline{toc}{chapter}{#1}%
   \markboth{#1}{#1}%
   \FirstArticletrue
-  \@startsection{chapter}{0}{\z@}{-1ex plus-1ex minus
-    -.2ex}{.5ex plus.2ex}{\ChapterFont}*%
-  }
-\renewcommand\section{\@startsection{section}{1}{\z@}{%
-    -2ex plus-1ex minus-.2ex}{.5ex plus.2ex}{\SectionFont}}
-\renewcommand\subsection{\@startsection{subsection}{2}{\z@}{%
-    -2ex plus-1ex minus-.2ex}{0.75ex plus.2ex}{\SubsectionFont}}
-\renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}{%
-    -2ex plus-1ex minus-.2ex}{0.75ex plus.2ex}{\SubsubsectionFont}}
-\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}{%
-    0ex plus1ex minus.2ex}{-.5ex}{\SubsubsectionFont}}
-\renewcommand\subparagraph{\@startsection{subparagraph}{4}%
-  {\parindent}{0ex plus1ex minus.2ex}{-.5ex}{\SubsubsectionFont}}
+  \@startsection{chapter}{0}{\z@}{-1ex plus-1ex minus -.2ex}{.5ex plus.2ex}{\ChapterFont}*}
+\renewcommand\section{\@startsection{section}{1}{\z@}{-2ex plus-1ex minus-.2ex}{0.2ex plus .1ex}{\SectionFont}}
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}{-2ex plus-1ex minus-.2ex}{2pt plus .1ex}{\SubsectionFont}}
+\renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}{-2ex plus-1ex minus-.2ex}{0.2ex plus.1ex}{\SubsubsectionFont}}
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}{0ex plus1ex minus.2ex}{-.5ex}{\SubsubsectionFont}}
+\renewcommand\subparagraph{\@startsection{subparagraph}{4}{\parindent}{0ex plus1ex minus.2ex}{-.5ex}{\SubsubsectionFont}}
+%
 \newcommand\keywords[1]{\def\DTK@keywords{#1}}
 \def\DTK@keywords{}
 \renewcommand\maketitle{%
@@ -711,12 +666,15 @@
 \fi
 \newcommand\CoverArt[3]{%
   \ifx\CoverTitleFont\@undefined
-  \newfont\CoverTitleFont{ecrm1700 scaled \magstep 5}
+  \newfont\CoverTitleFont{
+%    ecrm1700 
+  lmr10 scaled \magstep 5}
   \fi
   \ifx\CoverNumberFont\@undefined
-  \newfont\CoverNumberFont{ecrm1700 scaled 2986}
+  \newfont\CoverNumberFont{%ecrm1700
+    lmr10  scaled 2986}
   \fi
-  \vspace*{-34pt}\hfill
+  \vspace*{-34pt}%\hfill
   \setbox\@tempboxa=\hbox to \textheight{\null\hfill\CoverTitleFont
     \journalname\hfill\null}%
   \@tempdimb=\ht\@tempboxa
@@ -750,9 +708,7 @@
 \newcommand\cover@sub[3]{%
  #2. Jahrgang\quad Heft #1\quad #3%
 }
-\ifDTK@Author@\else
-  \definecolor{CoverArt@grey}{gray}{.8}
-\fi
+\ifDTK@Author@\else\definecolor{CoverArt@grey}{gray}{.8}\fi
 \def\CoverArt@strip@no#1/#2;{#1\raisebox{0.35ex}{\CoverTitleFont/}#2}
 \newcommand\CoverArt@linewidth{0pt}%{1.2pt}
 \newcommand\CoverArt@barwidth{2.41pt}
@@ -893,6 +849,7 @@
       \parskip=\ContentsParSkip
       \let\\=\relax
       \TOC@configure
+      \raggedright%%%%%%%%%%%%%%%%%% hv 2009-07-25
       \@starttoc{toc}
     \endgroup
   }
@@ -1028,11 +985,7 @@
   \g@addto@macro\DTK@embedded@enddocumenthook}
 \AtEmbeddedEndDocument{\endinput}
 \newcommand*\DTK@jobname{}
-\ifDTK@Author@
-  \edef\DTK@jobname{komoedie}
-\else
-  \edef\DTK@jobname{\jobname}
-\fi
+\ifDTK@Author@\edef\DTK@jobname{komoedie}\else\edef\DTK@jobname{\jobname}\fi
 \newcommand*\DTK@local@jobname{}
 \newcommand*\DTK@local@inputname{}
 %%%\newcommand*\DTK@PSforPDF{}
