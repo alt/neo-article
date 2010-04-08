@@ -1,4 +1,3 @@
-\immediate\write18{xelatex neo1}
 \immediate\write18{xelatex neo2}
 \immediate\write18{xelatex neo3}
 \immediate\write18{xelatex neo4}
@@ -10,4 +9,9 @@
 \immediate\write18{xelatex ebene4}
 \immediate\write18{xelatex ebene5}
 \immediate\write18{xelatex ebene6}
+
+\immediate\write18{pdflatex neo+xelatex}
+\immediate\write18{bibtex neo+xelatex}
+\immediate\write18{pdflatex neo+xelatex}
+\immediate\write18{pdflatex neo+xelatex}
 \stop
