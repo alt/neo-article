@@ -1,3 +1,10 @@
+\typeout{}
+\typeout{}
+\typeout{Please insert 1 to compile everything, 2 to compile only the helper files.}
+
+\immediate\read18 to \eingabe
+\ifnum \eingabe < 3
+\immediate\write18{xelatex neo1}
 \immediate\write18{xelatex neo2}
 \immediate\write18{xelatex neo3}
 \immediate\write18{xelatex neo4}
@@ -10,8 +17,19 @@
 \immediate\write18{xelatex ebene5}
 \immediate\write18{xelatex ebene6}
 
+\ifnum \eingabe = 2
 \immediate\write18{pdflatex neo+xelatex}
 \immediate\write18{bibtex neo+xelatex}
 \immediate\write18{pdflatex neo+xelatex}
 \immediate\write18{pdflatex neo+xelatex}
+\fi
+
+\else
+\typeout{(__)}
+\typeout{(oo)}
+\typeout{\//------\ }
+\typeout{_||ooo|\ }
+\typeout{_\\/¯¯//\ *}
+\typeout{      ....Have you mooed today?}
+\fi
 \stop
