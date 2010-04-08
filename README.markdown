@@ -1,4 +1,3 @@
-﻿
 # neo-article
 
 ## Purpose
