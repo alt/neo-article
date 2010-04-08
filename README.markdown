@@ -14,7 +14,7 @@ To compile, use the makefile:
 
 Insert 1 if you want to compile all files or 2 if you only want to compile the helper files (`ebene*.tex` and `neo*.tex`)
 
-The option `--shell-escape` is needed here! (or compile all of the ‌`neo*.tex`, `ebene*.tex`, `neo+xelatex.tex` `neo+xelatex.aux` by hand)
+The option `--shell-escape` is needed here! (or compile all of the files ‌`neo*.tex`, `ebene*.tex`, `neo+xelatex.tex` `neo+xelatex.aux` by hand)
 
 If you want to compile by hand, you have to run `xelatex` on the `neo*.tex` and `ebene*.tex` first.
 
