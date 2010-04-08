@@ -11,7 +11,7 @@ The main author is [Arno Trautmann](http://github.com/alt/neo-article).
 
 To compile, use the makefile:
 
-    `latex --shell-escape makefile`
+    latex --shell-escape makefile
 
 Insert 1 if you want to compile all files or 2 if you only want to compile the helper files (`ebene*.tex` and `neo*.tex`)
 
